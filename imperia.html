@@ -14,7 +14,6 @@
             padding: 0;
             background-size: cover;
             overflow: visible; /* Zajistí, že se text nebude schovávat */
-
             }
 
         h1 { 
@@ -33,12 +32,27 @@
             gap: 3px; /* Mezera mezi textem a obrázkem */
         }
 
+        .divh1{
+            display: inline-flex; 
+        }
+
+        
+@media (max-width: 510px) {
+    .divh1 h1 {
+        font-size: 3rem;
+    }
+}
+@media (max-width: 450px) {
+    .divh1 h1 {
+        font-size: 2.7rem;
+    }
+}
+
         .h1-background{
             background: linear-gradient(135deg, #4c35c0, #0c0c0c);
             padding: 0;
             margin: 0;
-            margin-bottom: 3px;
-
+            margin-bottom: 5px;
         }
 
         h1 span {
@@ -51,10 +65,16 @@
             flex-shrink: 0; /* Zabrání zmenšování loga */
         }
 
+        @media (max-width: 450px) {
+    .divh1 h1 img {
+        width: 100px;
+    }
+}
+
         h5 { 
             font-size: 3.5em; 
             color: #ffffff; 
-            margin: 10px; 
+            margin: 0px; 
             margin-top: 10px;
             margin-bottom: 0px;
             text-shadow: 4px 4px 10px rgba(0,0,0,0.6); 
@@ -65,6 +85,18 @@
             display: inline-block;
             padding-bottom: 5px;
         }
+        @media (max-width: 768px) {
+    .h5div h5 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .h5div h5 {
+        font-size: 2.8rem;
+    }
+}
+
 
         h4 { 
             font-size: 1em; 
@@ -108,7 +140,10 @@
             margin-right: 20px;
             margin-bottom: 0px;
         }
+        .nav1{
+            margin-bottom: 2px;
 
+        }
         .nav button{ 
             display: flex;
             flex-direction: column;
@@ -144,6 +179,8 @@
             font-size: 0.9em;
             font-weight: bold;
         }
+
+
 
         .nav button:hover,.nav1 button:hover {
             transform: scale(1.1);
@@ -287,6 +324,18 @@
             object-fit: cover;
             transition: transform 0.3s ease-in-out;
         }
+
+        @media (max-width: 700px) {
+    .detail-container img {
+        max-width: 80%; /* Zabrání, aby byl moc velký */
+    }
+}
+
+@media (max-width: 500px) {
+    .detail-container img {
+        max-width: 90%; /* Zabrání, aby byl moc velký */
+    }
+}
 
         .detail-container img:hover { 
             transform: scale(1.05); 
@@ -447,10 +496,10 @@
     <div class="bg4"></div>
     <div class="bg5"></div>
 
-    <h5>Armami s. r. o.</h5>
+    <div class="h5div"><h5>Armami s. r. o.</h5></div>
     <h4>Oficiální distributor pro ROAN ČR/SK</h4>¨
     <div class="h1-background"> 
-        <h1>Katalog produktů <img src="ROAN logo bck.png" alt="Ikona"></h1>
+        <div class="divh1"><h1>Katalog produktů <img src="ROAN logo bck.png" alt="Ikona"></h1></div>
     </div>
     
     <div class="nav">
@@ -513,7 +562,7 @@
 <!-- Modální okno -->
 <div id="imageModal" class="modal" onclick="closeImageModal()">
     <span class="close-btn">&times;</span>
-    <img id="modalImage" class="modal-content">
+    <div class="imgdiv"><img id="modalImage" class="modal-content"></div>
 </div>
 
         <div class="detail-text">
@@ -680,7 +729,8 @@
 
                 { name: "Roan Ivi Pine Green", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 793 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller34.jpg" },
                 { name: "Roan Ivi Mocca", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 793 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller39.jpg" },
-                { name: "Roan Ivi Mocca", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 793 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller39.jpg" },
+                { name: "Roan Ivi Taupe", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 793 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller42.jpg" },
+                { name: "Roan Ivi Tea Leaf", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 793 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller43.jpg" },
             ],
             bassnext:[
                 { name: "Roan Bass Next Amber", priceWithVAT: "17 200 CZK", priceWithoutVAT: "14 215 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12036", image: "kombinované kočárky/stroller1.jpg" },
