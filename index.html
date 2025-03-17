@@ -68,9 +68,8 @@
         @media (max-width: 450px) {
     .divh1 h1 img {
         width: 100px;
+        }
     }
-}
-
 
         h5 { 
             font-size: 3.7em; 
@@ -496,9 +495,10 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: 40px;
-        color: white;
+        color: rgb(0, 0, 0);
         cursor: pointer;
         padding: 10px;
+        z-index: 2;
     }
 
     .prev {
@@ -612,44 +612,93 @@
     </div>
     
         
-    <div class="contact-card" style="margin: 0 auto; padding: 15px; background: linear-gradient(10deg, #4c35c0, #000000a4); box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3); color: white; display: flex; justify-content: space-between; flex-wrap: wrap; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+    <div class="contact-card" style="margin: 0 auto; padding: 15px; background: linear-gradient(100deg, #4c35c0, #0c0c0cdb); box-shadow: 0 8px 8px rgba(0, 0, 0, 0.3); color: white; display: flex; justify-content: space-between; flex-wrap: wrap; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; border-top: solid 1px #000;">
         <!-- Kontakty -->
-        <div style="flex: 1 1 23%; padding: 8px; margin: 8px; background-color: #0000008f; border-radius: 10px;">
-            <h5 style="font-size: 1.3em; text-align: center; margin-bottom: 8px;">Kontakty</h5>
+        <div style="flex: 1 1 23%; padding: 8px; margin: 8px; background-color: #00000083; border-radius: 10px;">
+            <h5 style="font-size: 1.3em; text-align: center; margin-bottom: 5px;">Kontakty</h5>
             <p><b>Adresa pro doručení:</b> Máchova 1147/1, 742 21 Kopřivnice</p>
             <p><b>Telefon:</b> +420 608 618 027</p>
             <p><b>Email:</b> <a href="mailto:armami@email.cz" style="color: #fff; text-decoration: underline;">armami@email.cz</a></p>
-            <p><b>Fakturační adresa:</b> Husova 388/7b, IČO: 22317031, DIČ: CZ22317031</p>
+            <p><b>Fakturační adresa:</b> Husova 388/7b</p>
+            <p>IČO: 22317031, DIČ: CZ22317031</p>
         </div>
     
         <!-- O nás -->
-        <div style="flex: 1 1 23%; padding: 10px; margin: 8px; background-color: #0000008f; border-radius: 10px;">
-            <h5 style="font-size: 1.3em; text-align: center; margin-bottom: 8px;">O nás</h5>
+        <div style="flex: 1 1 23%; padding: 10px; margin: 8px; background-color: #00000083; border-radius: 10px; min-width: 310px;">
+            <h5 style="font-size: 1.3em; text-align: center; margin-bottom: 5px;">O nás</h5>
             <p style="font-size: 1em;">Jsme specialisté na kvalitní kočárky a dětskou výbavu. Naším cílem je poskytovat rodičům vše, co potřebují pro pohodlí a bezpečí jejich dětí. Nabízíme produkty, které splňují nejvyšší standardy kvality, komfortu a designu.</p>
         </div>
     
         <!-- Sociální sítě -->
-        <div style="flex: 1 1 23%; padding: 10px; margin: 8px; background-color: #0000008f; border-radius: 10px;">
-            <h5 style="font-size: 1.3em; text-align: center; margin-bottom: 8px;">Sociální sítě</h5>
-            <p style="font-size: 1em; text-align: center;">Sledujte nás na našich sociálních sítích pro novinky a inspiraci pro vaše děti:</p>
-            <p style="text-align: center;">
-                <a href="https://www.facebook.com" style="color: #fff; text-decoration: none; margin: 0 8px;">Facebook</a>|
-                <a href="https://www.instagram.com" style="color: #fff; text-decoration: none; margin: 0 8px;">Instagram</a>|
-                <a href="https://www.pinterest.com" style="color: #fff; text-decoration: none; margin: 0 8px;">Pinterest</a>
+        <div style="flex: 1 1 23%; padding: 10px; margin: 8px; background-color: #00000083; border-radius: 10px;">
+            <h5 style="font-size: 1.3em; text-align: center; margin-bottom: 5px;">Sociální sítě</h5>
+            <p style="font-size: 1em; text-align: center; margin-bottom: 25px;">Sledujte nás na našich sociálních sítích pro novinky a inspiraci:</p>
+            <p style="display: flex; justify-content: center; align-items: center; gap: 15px;">
+                <a href="https://www.facebook.com">
+                    <img src="ikony/facebook.svg" alt="Facebook" width="26" height="26">
+                </a>
+                <a href="https://www.youtube.com/channel/UCqmXOPQcLaGiNu4TeCRU5Mw">
+                    <img src="ikony/youtube.svg" alt="Pinterest" width="30" height="30">
+                </a>
+                <a href="https://www.instagram.com">
+                    <img src="ikony/instagram.svg" alt="Instagram" width="30" height="30">
+                </a>
             </p>
+            
         </div>
     
         <!-- Naše obchody -->
-        <div style="flex: 1 1 23%; padding: 8px; margin: 8px; background-color: #0000008f; border-radius: 10px;">
-            <h5 style="font-size: 1.3em; text-align: center; margin-bottom: 8px;">Naše obchody</h5>
-            <p style="font-size: 1em; text-align: center;">Naše produkty si můžete zakoupit v těchto obchodech:</p>
-            <p style="text-align: center;">
-                <a href="https://www.example1.com" style="color: #fff; text-decoration: none; margin: 0 8px;">Obchod 1</a>|
-                <a href="https://www.example2.com" style="color: #fff; text-decoration: none; margin: 0 8px;">Obchod 2</a>|
-                <a href="https://www.example3.com" style="color: #fff; text-decoration: none; margin: 0 8px;">Obchod 3</a>
-            </p>
-        </div>
+<!-- Naše obchody -->
+<div style="
+    flex: 1 1 23%;
+    padding: 15px;
+    margin: 10px;
+    background-color: #00000083;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+">
+    <h5 style="font-size: 1.4em; margin-bottom: 5px;">Naše obchody</h5>
+    <p style="font-size: 1em; margin-bottom: 5px; margin-top: 5px;">
+        Naše produkty si můžete zakoupit v těchto obchodech:
+    </p>
+
+    <!-- Odkazy v gridu -->
+    <div style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        justify-content: center;
+        padding: 10px;
+        font-size: 15px;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        
+    ">
+        <a href="https://www.zirafa-shop.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Dětský obchůdek Žirafa</a>
+        <a href="https://www.babyadore.sk/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">BabyAdore</a>
+        <a href="https://www.bambino.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Bambino.cz</a>
+        <a href="https://www.babyplace.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">BabyPlace</a>
+        <a href="https://www.kocarky.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Daniela Kočárky</a>
+        <a href="https://www.detskydum.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Dětský Dům</a>
+        <a href="https://www.eshopbaby.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">EshopBaby</a>
+        <a href="https://www.nakupujskacenkou.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Dětský Svět</a>
+        <a href="https://www.kocarky-kocarek.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">HAPU</a>
+        <a href="https://www.nejlepsikocarky.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">John Nell</a>
+        <a href="https://www.mimisk.eu/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">MimiSk</a>
+        <a href="https://shop.modrykonik.sk/sk-eur/sk/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">ModrýKoník.sk</a>
+        <a href="https://www.malvik.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Malvík</a>
+        <a href="https://www.mojkocik.sk/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">MojKočík SK</a>
+        <a href="https://www.mujandilek.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">MůjAndílek</a>
+        <a href="https://www.kocarek.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Kočárek.cz</a>
+        <a href="https://www.detskyruzek.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Dětský Růžek</a>
+        <a href="http://www.bambino-mladaboleslav.cz/bambino" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Bambino Mladá Boleslav</a>
+        <a href="https://www.sambaby.com/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">SAMBABY</a>
+        <a href="https://www.123kociky.sk/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">123kociky.sk</a>
+        <a href="https://www.kocarkov.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Kočárkov</a>
+        <a href="http://www.bambinomelnik.cz/" style="text-decoration: none; color: #fff; padding: 8px; border-radius: 5px; transition: 0.3s;">Bambino Mělník</a>
     </div>
+</div>
+
     
     
     
@@ -736,9 +785,41 @@
                 { name: "Roan Coss Classic - Botanical Garden", priceWithVAT: "15 800 CZK", priceWithoutVAT: "13 058 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/stroller12.jpg" }
             ],
             doplnkove: [
-                { name: "Roan Cosmo Black", priceWithVAT: "3490 CZK", priceWithoutVAT: "3035 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "22004", image: "doplňky/autosedacka.jpg" },
-                { name: "Adaptéry na autosedačku", priceWithVAT: "700 CZK", priceWithoutVAT: "579 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12050", image: "doplňky/adaptery.jpg" },
-                { name: "Adaptéry na autosedačku", priceWithVAT: "700 CZK", priceWithoutVAT: "579 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12049", image: "doplňky/adaptery2.jpg" }
+                { name: "Roan Cosmo Black", priceWithVAT: "3490 CZK", priceWithoutVAT: "3035 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "22004", image: "doplňky/autosedacka.jpg", description:  `
+        <p><b>Autosedačka pro děti od 0-13 kg</b></p>
+        <p class="extra-description">Charakteristika autosedačky Roan Cosmo:</p>
+        <p>- Kompatibilní se základnou Isofix IQ/ IQ 2.0 C<br>
+           - Nadprůměrná lehkost konstrukce<br>
+           - Vložka pro ergonomickou polohu<br>
+           - Nejnovější bezpečnostní standardy<br>
+           - Ochrana proti nárazu<br>
+           - Pohodlné polstrování pro maximální komfort dítěte<br>
+           - Snadná instalace do auta pomocí bezpečnostních pásů nebo Isofix základny<br>
+           - Sluneční stříška pro ochranu před sluncem a větrem</p>
+        <p class="extra-description">Technické parametry:</p>
+        <p>- Hmotnost autosedačky: cca 3,2 kg<br>
+           - Doporučená výška dítěte: 40-75 cm<br>
+           - Schváleno dle normy: ECE R129 i-Size<br>
+           - Možnost montáže po směru nebo proti směru jízdy</p>
+        `
+    },
+
+                { name: "Adaptéry na autosedačku", priceWithVAT: "700 CZK", priceWithoutVAT: "579 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12050", image: "doplňky/adaptery.jpg", description:  `
+    <p><b>Adaptéry pro kočárky Roan Marita, Roan Emma.</b> Slouží k uchycení autosedaček k podvozku kočárku.</p>
+    <p class="extra-description">Kompatibilní jsou tyto autosedačky:</p>
+    <p>- Cybex Aton, Cybex Aton Basic, Cybex Aton Q, Cybex Aton 3 a 4, Cybex Cloud Q<br>
+       - BeSafe Izi Go<br>
+       - Maxi Cosi Pebble, Maxi Cosi Citi, Maxi Cosi CabrioFix<br>
+       - Recaro Privia<br>
+       - Kiddy Evolution</p>
+` },
+                { name: "Adaptéry na autosedačku", priceWithVAT: "700 CZK", priceWithoutVAT: "579 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12049", image: "doplňky/adaptery2.jpg", description:
+    `<p><b>Adaptéry pro kočárky Roan Ivi, Roan Bloom, Roan Bass Next, Roan Coss a Roan Coss Classic.</b> Slouží k uchycení autosedačky k podvozku kočárku.</p>
+    <p class="extra-description">Kompatibilní jsou tyto autosedačky:</p>
+    <p>- Cybex Aton, Cybex Aton Basic, Cybex Aton Q, Cybex Aton 3 a 4, Cybex Cloud Q<br>
+       - BeSafe Izi Go, Be Safe<br>
+       - Maxi Cosi Pebble, Maxi Cosi Citi, Maxi Cosi CabrioFix</p>
+` }
             ],
             roanivivintage: [
                 { name: "Roan Ivi Vintage Iced Coffee Limited Edition", priceWithVAT: "18 400 CZK", priceWithoutVAT: "15 207 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller18.jpg" },
@@ -1310,9 +1391,6 @@ const descriptions = {
 
 `,
 
-
-
-
     // Pokračuj pro ostatní modely: Roan Coss, Roan Bloom, Roan Coss Classic, Roan Emma, Roan Marita
 };
 
@@ -1497,6 +1575,11 @@ const extraImages = {
         "klasické kočárky/stroller12nn.jpg",
         "klasické kočárky/stroller12nnn.jpg",
     ],
+    "Roan Cosmo Black": [
+        "doplňky/autosedacka1.jpg",
+        "doplňky/autosedacka2.jpg",
+        "doplňky/autosedacka3.jpg",
+    ]
 
 };
 
