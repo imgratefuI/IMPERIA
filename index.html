@@ -459,7 +459,7 @@
     }
     .model-grid {
       display:grid;
-      grid-template-columns:repeat(8,minmax(0,1fr));
+      grid-template-columns:repeat(9,minmax(0,1fr));
       gap:10px;
       margin-top:31px
     }
@@ -1266,6 +1266,7 @@
       font-size:11px;
       color:var(--muted)
     }
+    .page-gap { display:grid; place-items:center; width:16px; color:var(--muted); font-size:11px; }
     /* 07. Tablet, mobile & motion preferences */
     @media(min-width:1600px) {
       .hero-copy {
@@ -1381,7 +1382,7 @@
         height:18px
       }
       .model-grid {
-        grid-template-columns:repeat(4,1fr);
+        grid-template-columns:repeat(3,minmax(0,1fr));
         gap:8px
       }
       .model-tile {
@@ -1602,7 +1603,7 @@
         max-width:350px
       }
       .model-grid {
-        grid-template-columns:repeat(4,minmax(0,1fr));
+        grid-template-columns:repeat(3,minmax(0,1fr));
         margin-top:24px;
         gap:9px 3px
       }
@@ -1961,255 +1962,1377 @@
   <script>
 /* Original catalogue data. Prices and technical descriptions are retained. */
 const products = {
-            kombinovane: [
-                { name: "Roan Ivi Vintage Cooper Glow Limited Edition", priceWithVAT: "18 500 CZK", priceWithoutVAT: "15 300 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller19.jpg" },
-                { name: "Roan Ivi Vintage Hazel", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller37.jpg" },
-                { name: "Roan Ivi Vintage Caviar", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller38.jpg" },
-                { name: "Roan Ivi Vintage Praline", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller40.jpg" },
-                { name: "Roan Ivi Vintage Sicilian Olive", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller41.jpg" },
-
-                { name: "Roan Ivi Vintage Almond Sugar Eko-kůže", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller45.jpg" },
-                { name: "Roan Ivi Vintage Blue Tea", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller46.jpg" },
-                { name: "Roan Ivi Vintage Butter Cream Eko-kůže", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller47.jpg" },
-                { name: "Roan Ivi Vintage Lobster", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller36.jpg" },
-
-                { name: "Roan Ivi Vintage Mocha Mousse", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller48.jpg" },
-                { name: "Roan Ivi Vintage Pixel Dark", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller49.jpg" },
-                { name: "Roan Ivi Vintage Pixel Light", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller50.jpg" },
-                { name: "Roan Ivi Vintage Raisin Rum Eko-kůže", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller51.jpg" },
-
-                { name: "Roan Ivi Vintage Sage Green", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller52.jpg" },
-                { name: "Roan Ivi Vintage Sweet Fig", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller53.jpg" },
-                { name: "Roan Ivi Vintage Turkish Coffee Black", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller54.jpg" },
-                { name: "Roan Ivi Vintage Turkish Coffee Brown", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller55.jpg" },          
-
-                { name: "Roan Ivi Vintage Luxe Grey", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/luxegrey.jpg" },          
-                { name: "Roan Ivi Vintage Gold Mood", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/goldmood.jpg" },          
-                { name: "Roan Ivi Vintage Mocca Cafe", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/moccacafe.jpg" },          
-                { name: "Roan Ivi Vintage Himalayan Green", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/himalayangreen.jpg" },
-                { name: "Roan Ivi Vintage Oyster Eko-kůže", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/oystervegan.jpg" },          
-                { name: "Roan Ivi Vintage Copper Glow", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/copperglow.jpg" },          
-
-
-
-
-                { name: "Roan Ivi True Black", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller29.jpg" },
-                { name: "Roan Ivi Cocoa", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller24.jpg" },
-                { name: "Roan Ivi Raven", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller27.jpg" },
-
-                { name: "Roan Ivi Sesame", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller28.jpg" },
-                { name: "Roan Ivi Cocoa Rose Gold", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller30.jpg" },
-                { name: "Roan Ivi Sesame Champagne", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller57.jpg" },
-                { name: "Roan Ivi Taupe", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller42.jpg" },           
-           
-
-
-
-                { name: "Roan Bass Next Black", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "12035", image: "kombinované kočárky/stroller2.jpg" },
-                { name: "Roan Bass Next Misty Mood", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller3.jpg" },
-                { name: "Roan Bass Next Rosy Mood", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller4.jpg" },
-
-                { name: "Roan Bass Next Titanium", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "12034", image: "kombinované kočárky/stroller5.jpg" },
-                { name: "Roan Bass Next Cypress", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller8.jpg" },
-                { name: "Roan Bass Next Oreo", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller9.jpg" },            
-                { name: "Roan Bass Next Hunter Queen", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller13.jpg" },
-
-                { name: "Roan Bass Next Resort Blue", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller14.jpg" },
-                { name: "Roan Bass Next Pacific Green", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller21.jpg" },
-                { name: "Roan Bass Next Hazel", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller56.jpg" },
-
-                { name: "Roan Bass Next Seaport", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/seaport.jpg" },
-                { name: "Roan Bass Next Nougat", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/nougat.jpg" },
-                { name: "Roan Bass Next Truffle", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/truffle.jpg" },
-                { name: "Roan Bass Next Caviar", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/caviar.jpg" },
-                { name: "Roan Bass Next Bottle Green", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/bottlegreen.jpg" },
-                { name: "Roan Bass Next Dolphin Grey", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/dolphingrey.jpg" },
-                { name: "Roan Bass Next Turkish Coffee Brown", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/turkishcoffee.jpg" },
-
-
-
-
-                { name: "Roan Bloom - Night Green", priceWithVAT: "16 800 CZK", priceWithoutVAT: "13 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "12031", image: "kombinované kočárky/stroller10.jpg" },
-                { name: "Roan Bloom - Titanium", priceWithVAT: "16 800 CZK", priceWithoutVAT: "13 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "12032", image: "kombinované kočárky/stroller12.jpg" },
-
-
-
-
-                { name: "Roan Bloom 2.0 - Botanical Garden", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller200.jpg" },
-                { name: "Roan Bloom 2.0 - Nature Beige", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller201.jpg" },
-                { name: "Roan Bloom 2.0 - Nature Black", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller202.jpg" },
-                { name: "Roan Bloom 2.0 - Nature Grey", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller203.jpg" },
-
-                { name: "Roan Bloom 2.0 - Nature Olive", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller204.jpg" },
-                { name: "Roan Bloom 2.0 - Pure Cashmere", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller205.jpg" },
-                { name: "Roan Bloom 2.0 - Venice Night", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller206.jpg" },
-
-
-
-                { name: "Roan Coss - Night Trip", priceWithVAT: "16 300 CZK", priceWithoutVAT: "12 900 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller16.jpg" },
-                { name: "Roan Coss - Titanium", priceWithVAT: "16 300 CZK", priceWithoutVAT: "12 900 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller17.jpg" },
-            ],
-            klasicke: [
-                { name: "Roan Coss Classic - Night Trip", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12040", image: "klasické kočárky/stroller2.jpg" },
-                { name: "Roan Coss Classic - Titanium", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Šedá, Stříbrná", specs: "12042", image: "klasické kočárky/stroller3.jpg" },
-
-                { name: "Roan Coss Classic - Venice Night", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Šedá, Stříbrná", specs: "-", image: "klasické kočárky/stroller9.jpg" },
-                { name: "Roan Coss Classic - Tahitian Vanilla", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/stroller10.jpg" },
-                { name: "Roan Coss Classic - Pure Cashmere", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Šedá, Stříbrná", specs: "-", image: "klasické kočárky/stroller11.jpg" },
-                { name: "Roan Coss Classic - Botanical Garden", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/stroller12.jpg" },
-
-                { name: "Roan Coss Classic - Himalayan Green", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/himalayangreen.jpg" },
-
-
-
-                { name: "Roan Emma E - 1", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/stroller13.jpg" },
-                { name: "Roan Emma E - 2", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-2.jpg" },
-                { name: "Roan Emma E - 3", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-3.jpg" },
-                { name: "Roan Emma E - 4", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-4.jpg" },
-                { name: "Roan Emma E - 5", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-5.jpg" },
-                { name: "Roan Emma E - 6", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-6.jpg" },
-                { name: "Roan Emma E - 7", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-7.jpg" },
-            ],
-            doplnkove: [
-                { name: "Roan Cosmo Black", priceWithVAT: "3500 CZK", priceWithoutVAT: "2900 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "22004", image: "doplňky/autosedacka.jpg", description:  `
-        <p><b>Autosedačka pro děti od 0-13 kg</b></p>
-        <p class="extra-description">Charakteristika autosedačky Roan Cosmo:</p>
-        <p>- Kompatibilní se základnou Isofix IQ/ IQ 2.0 C<br>
-           - Nadprůměrná lehkost konstrukce<br>
-           - Vložka pro ergonomickou polohu<br>
-           - Nejnovější bezpečnostní standardy<br>
-           - Ochrana proti nárazu<br>
-           - Pohodlné polstrování pro maximální komfort dítěte<br>
-           - Snadná instalace do auta pomocí bezpečnostních pásů nebo Isofix základny<br>
-           - Sluneční stříška pro ochranu před sluncem a větrem</p>
-        <p class="extra-description">Technické parametry:</p>
-        <p>- Hmotnost autosedačky: cca 3,2 kg<br>
-           - Doporučená výška dítěte: 40-75 cm<br>
-           - Schváleno dle normy: ECE R129 i-Size<br>
-           - Možnost montáže po směru nebo proti směru jízdy</p>
-        `
+  "kombinovane": [
+    {
+      "name": "Roan Ivi 2.0 Vintage Cooper Glow Limited Edition",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "15 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller19.jpg"
     },
+    {
+      "name": "Roan Ivi 2.0 Vintage Hazel",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller37.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Caviar",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller38.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Praline",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller40.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Sicilian Olive",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller41.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Almond Sugar Eko-kůže",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller45.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Blue Tea",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller46.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Butter Cream Eko-kůže",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller47.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Lobster",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller36.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Mocha Mousse",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller48.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Pixel Dark",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller49.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Pixel Light",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller50.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Raisin Rum Eko-kůže",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller51.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Sage Green",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller52.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Sweet Fig",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller53.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Turkish Coffee Black",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller54.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Turkish Coffee Brown",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller55.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Luxe Grey",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/luxegrey.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Gold Mood",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/goldmood.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Himalayan Green",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/himalayangreen.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Oyster Eko-kůže",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/oystervegan.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Copper Glow",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/copperglow.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Dune Silk",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Dune Silk",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Dune Silk Ivi 2.0.png",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Dune Silk</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Amber Silk",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Amber Silk",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Amber Silk Ivi 2.0.jpg",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Amber Silk</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Silk Soft",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Silk Soft",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Silk Soft Ivi 2.0.jpg",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Silk Soft</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Black Silk",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Black Silk",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Black Silk Ivi 2.0.jpg",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Black Silk</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Silhouette",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Silhouette",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Silhouette Ivi 2.0.jpg",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Silhouette</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 True Black",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller29.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Cocoa",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller24.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Sesame",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller28.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Cocoa Rose Gold",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller30.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Sesame Champagne",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller57.jpg"
+    },
+    {
+      "name": "Roan Bass Next Misty Mood",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller3.jpg"
+    },
+    {
+      "name": "Roan Bass Next Rosy Mood",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller4.jpg"
+    },
+    {
+      "name": "Roan Bass Next Titanium",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "12034",
+      "image": "kombinované kočárky/stroller5.jpg"
+    },
+    {
+      "name": "Roan Bass Next Cypress",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller8.jpg"
+    },
+    {
+      "name": "Roan Bass Next Oreo",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller9.jpg"
+    },
+    {
+      "name": "Roan Bass Next Hunter Queen",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller13.jpg"
+    },
+    {
+      "name": "Roan Bass Next Resort Blue",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller14.jpg"
+    },
+    {
+      "name": "Roan Bass Next Pacific Green",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller21.jpg"
+    },
+    {
+      "name": "Roan Bass Next Hazel",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller56.jpg"
+    },
+    {
+      "name": "Roan Bass Next Seaport",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/seaport.jpg"
+    },
+    {
+      "name": "Roan Bass Next Nougat",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/nougat.jpg"
+    },
+    {
+      "name": "Roan Bass Next Truffle",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/truffle.jpg"
+    },
+    {
+      "name": "Roan Bass Next Caviar",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/caviar.jpg"
+    },
+    {
+      "name": "Roan Bass Next Bottle Green",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/bottlegreen.jpg"
+    },
+    {
+      "name": "Roan Bass Next Dolphin Grey",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/dolphingrey.jpg"
+    },
+    {
+      "name": "Roan Bass Next Turkish Coffee Brown",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/turkishcoffee.jpg"
+    },
+    {
+      "name": "Roan Bloom - Night Green",
+      "priceWithVAT": "16 800 CZK",
+      "priceWithoutVAT": "13 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "12031",
+      "image": "kombinované kočárky/stroller10.jpg"
+    },
+    {
+      "name": "Roan Bloom - Titanium",
+      "priceWithVAT": "16 800 CZK",
+      "priceWithoutVAT": "13 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "12032",
+      "image": "kombinované kočárky/stroller12.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Botanical Garden",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller200.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Nature Beige",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller201.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Nature Black",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller202.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Nature Grey",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller203.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Nature Olive",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller204.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Pure Cashmere",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller205.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Venice Night",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller206.jpg"
+    },
+    {
+      "name": "Roan Coss - Night Trip",
+      "priceWithVAT": "16 300 CZK",
+      "priceWithoutVAT": "12 900 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller16.jpg"
+    },
+    {
+      "name": "Roan Coss - Titanium",
+      "priceWithVAT": "16 300 CZK",
+      "priceWithoutVAT": "12 900 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller17.jpg"
+    }
+  ],
+  "klasicke": [
+    {
+      "name": "Roan Coss Classic - Night Trip",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "12040",
+      "image": "klasické kočárky/stroller2.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Titanium",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Šedá, Stříbrná",
+      "specs": "12042",
+      "image": "klasické kočárky/stroller3.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Venice Night",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Šedá, Stříbrná",
+      "specs": "-",
+      "image": "klasické kočárky/stroller9.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Tahitian Vanilla",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/stroller10.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Pure Cashmere",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Šedá, Stříbrná",
+      "specs": "-",
+      "image": "klasické kočárky/stroller11.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Botanical Garden",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/stroller12.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Himalayan Green",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/himalayangreen.jpg"
+    },
+    {
+      "name": "Roan Emma E - 1",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/stroller13.jpg"
+    },
+    {
+      "name": "Roan Emma E - 2",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-2.jpg"
+    },
+    {
+      "name": "Roan Emma E - 3",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-3.jpg"
+    },
+    {
+      "name": "Roan Emma E - 4",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-4.jpg"
+    },
+    {
+      "name": "Roan Emma E - 5",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-5.jpg"
+    },
+    {
+      "name": "Roan Emma E - 6",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-6.jpg"
+    },
+    {
+      "name": "Roan Emma E - 7",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-7.jpg"
+    }
+  ],
+  "doplnkove": [
+    {
+      "name": "Roan Cosmo Black",
+      "priceWithVAT": "3500 CZK",
+      "priceWithoutVAT": "2900 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "22004",
+      "image": "doplňky/autosedacka.jpg",
+      "description": "\n        <p><b>Autosedačka pro děti od 0-13 kg</b></p>\n        <p class=\"extra-description\">Charakteristika autosedačky Roan Cosmo:</p>\n        <p>- Kompatibilní se základnou Isofix IQ/ IQ 2.0 C<br>\n           - Nadprůměrná lehkost konstrukce<br>\n           - Vložka pro ergonomickou polohu<br>\n           - Nejnovější bezpečnostní standardy<br>\n           - Ochrana proti nárazu<br>\n           - Pohodlné polstrování pro maximální komfort dítěte<br>\n           - Snadná instalace do auta pomocí bezpečnostních pásů nebo Isofix základny<br>\n           - Sluneční stříška pro ochranu před sluncem a větrem</p>\n        <p class=\"extra-description\">Technické parametry:</p>\n        <p>- Hmotnost autosedačky: cca 3,2 kg<br>\n           - Doporučená výška dítěte: 40-75 cm<br>\n           - Schváleno dle normy: ECE R129 i-Size<br>\n           - Možnost montáže po směru nebo proti směru jízdy</p>\n        "
+    },
+    {
+      "name": "Adaptéry na autosedačky pro kočárky Marita, Emma",
+      "priceWithVAT": "700 CZK",
+      "priceWithoutVAT": "550 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "12050",
+      "image": "doplňky/adaptery.jpg",
+      "description": "\n    <p><b>Adaptéry pro kočárky Roan Marita, Roan Emma.</b> Slouží k uchycení autosedaček k podvozku kočárku.</p>\n    <p class=\"extra-description\">Kompatibilní jsou tyto autosedačky:</p>\n    <p>- Cybex Aton, Cybex Aton Basic, Cybex Aton Q, Cybex Aton 3 a 4, Cybex Cloud Q<br>\n       - BeSafe Izi Go<br>\n       - Maxi Cosi Pebble, Maxi Cosi Citi, Maxi Cosi CabrioFix<br>\n       - Recaro Privia<br>\n       - Kiddy Evolution</p>\n"
+    },
+    {
+      "name": "Adaptéry na autosedačky pro kočárky Ivi 2.0, Bloom, Bass Next, Coss",
+      "priceWithVAT": "700 CZK",
+      "priceWithoutVAT": "550 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "12049",
+      "image": "doplňky/adaptery2.jpg",
+      "description": "<p><b>Adaptéry pro kočárky Roan Ivi 2.0, Roan Bloom, Roan Bass Next, Roan Coss a Roan Coss Classic.</b> Slouží k uchycení autosedačky k podvozku kočárku.</p>\n    <p class=\"extra-description\">Kompatibilní jsou tyto autosedačky:</p>\n    <p>- Cybex Aton, Cybex Aton Basic, Cybex Aton Q, Cybex Aton 3 a 4, Cybex Cloud Q<br>\n       - BeSafe Izi Go, Be Safe<br>\n       - Maxi Cosi Pebble, Maxi Cosi Citi, Maxi Cosi CabrioFix</p>\n"
+    }
+  ],
+  "roanivivintage": [
+    {
+      "name": "Roan Ivi 2.0 Vintage Cooper Glow Limited Edition",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "15 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller19.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Hazel",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller37.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Caviar",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller38.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Praline",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller40.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Sicilian Olive",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller41.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Almond Sugar Eko-kůže",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller45.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Blue Tea",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller46.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Butter Cream Eko-kůže",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller47.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Lobster",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller36.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Mocha Mousse",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller48.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Pixel Dark",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller49.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Pixel Light",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller50.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Raisin Rum Eko-kůže",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller51.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Sage Green",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller52.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Sweet Fig",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller53.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Turkish Coffee Black",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller54.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Turkish Coffee Brown",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller55.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Luxe Grey",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/luxegrey.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Gold Mood",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/goldmood.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Himalayan Green",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/himalayangreen.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Oyster Eko-kůže",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/oystervegan.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Vintage Copper Glow",
+      "priceWithVAT": "18 500 CZK",
+      "priceWithoutVAT": "14 800 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/copperglow.jpg"
+    }
+  ],
+  "ivi": [
+    {
+      "name": "Roan Ivi 2.0 True Black",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller29.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Cocoa",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller24.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Sesame",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller28.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Cocoa Rose Gold",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller30.jpg"
+    },
+    {
+      "name": "Roan Ivi 2.0 Sesame Champagne",
+      "priceWithVAT": "17 900 CZK",
+      "priceWithoutVAT": "14 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller57.jpg"
+    }
+  ],
+  "bassnext": [
+    {
+      "name": "Roan Bass Next Misty Mood",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller3.jpg"
+    },
+    {
+      "name": "Roan Bass Next Rosy Mood",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller4.jpg"
+    },
+    {
+      "name": "Roan Bass Next Titanium",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "12034",
+      "image": "kombinované kočárky/stroller5.jpg"
+    },
+    {
+      "name": "Roan Bass Next Cypress",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller8.jpg"
+    },
+    {
+      "name": "Roan Bass Next Oreo",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller9.jpg"
+    },
+    {
+      "name": "Roan Bass Next Hunter Queen",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller13.jpg"
+    },
+    {
+      "name": "Roan Bass Next Resort Blue",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller14.jpg"
+    },
+    {
+      "name": "Roan Bass Next Pacific Green",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller21.jpg"
+    },
+    {
+      "name": "Roan Bass Next Hazel",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller56.jpg"
+    },
+    {
+      "name": "Roan Bass Next Seaport",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/seaport.jpg"
+    },
+    {
+      "name": "Roan Bass Next Nougat",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/nougat.jpg"
+    },
+    {
+      "name": "Roan Bass Next Truffle",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/truffle.jpg"
+    },
+    {
+      "name": "Roan Bass Next Caviar",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/caviar.jpg"
+    },
+    {
+      "name": "Roan Bass Next Bottle Green",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/bottlegreen.jpg"
+    },
+    {
+      "name": "Roan Bass Next Dolphin Grey",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/dolphingrey.jpg"
+    },
+    {
+      "name": "Roan Bass Next Turkish Coffee Brown",
+      "priceWithVAT": "17 200 CZK",
+      "priceWithoutVAT": "13 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/turkishcoffee.jpg"
+    }
+  ],
+  "bloom": [
+    {
+      "name": "Roan Bloom - Titanium",
+      "priceWithVAT": "16 800 CZK",
+      "priceWithoutVAT": "13 200 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "12032",
+      "image": "kombinované kočárky/stroller12.jpg"
+    }
+  ],
+  "bloom2": [
+    {
+      "name": "Roan Bloom 2.0 - Botanical Garden",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller200.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Nature Beige",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller201.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Nature Black",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller202.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Nature Grey",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller203.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Nature Olive",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller204.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Pure Cashmere",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller205.jpg"
+    },
+    {
+      "name": "Roan Bloom 2.0 - Venice Night",
+      "priceWithVAT": "17 500 CZK",
+      "priceWithoutVAT": "14 463 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller206.jpg"
+    }
+  ],
+  "coss": [
+    {
+      "name": "Roan Coss - Night Trip",
+      "priceWithVAT": "16 300 CZK",
+      "priceWithoutVAT": "12 900 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller16.jpg"
+    },
+    {
+      "name": "Roan Coss - Titanium",
+      "priceWithVAT": "16 300 CZK",
+      "priceWithoutVAT": "12 900 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Černá, Šedá",
+      "specs": "-",
+      "image": "kombinované kočárky/stroller17.jpg"
+    }
+  ],
+  "cossclassic": [
+    {
+      "name": "Roan Coss Classic - Night Trip",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "12040",
+      "image": "klasické kočárky/stroller2.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Titanium",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Šedá, Stříbrná",
+      "specs": "12042",
+      "image": "klasické kočárky/stroller3.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Venice Night",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Šedá, Stříbrná",
+      "specs": "-",
+      "image": "klasické kočárky/stroller9.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Tahitian Vanilla",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/stroller10.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Pure Cashmere",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Šedá, Stříbrná",
+      "specs": "-",
+      "image": "klasické kočárky/stroller11.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Botanical Garden",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/stroller12.jpg"
+    },
+    {
+      "name": "Roan Coss Classic - Himalayan Green",
+      "priceWithVAT": "15 800 CZK",
+      "priceWithoutVAT": "12 500 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/himalayangreen.jpg"
+    }
+  ],
+  "emma": [
+    {
+      "name": "Roan Emma E - 1",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/stroller13.jpg"
+    },
+    {
+      "name": "Roan Emma E - 2",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-2.jpg"
+    },
+    {
+      "name": "Roan Emma E - 3",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-3.jpg"
+    },
+    {
+      "name": "Roan Emma E - 4",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-4.jpg"
+    },
+    {
+      "name": "Roan Emma E - 5",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-5.jpg"
+    },
+    {
+      "name": "Roan Emma E - 6",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-6.jpg"
+    },
+    {
+      "name": "Roan Emma E - 7",
+      "priceWithVAT": "14 500 CZK",
+      "priceWithoutVAT": "11 300 CZK",
+      "availability": "2-3 týdny",
+      "colors": "Zelená, Černá",
+      "specs": "-",
+      "image": "klasické kočárky/E-7.jpg"
+    }
+  ],
+  "ivisilkywave": [
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Dune Silk",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Dune Silk",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Dune Silk Ivi 2.0.png",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Dune Silk</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Amber Silk",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Amber Silk",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Amber Silk Ivi 2.0.jpg",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Amber Silk</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Silk Soft",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Silk Soft",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Silk Soft Ivi 2.0.jpg",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Silk Soft</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Black Silk",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Black Silk",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Black Silk Ivi 2.0.jpg",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Black Silk</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    },
+    {
+      "name": "Roan Ivi 2.0 Silky Wave Silhouette",
+      "priceWithVAT": null,
+      "priceWithoutVAT": null,
+      "availability": "Na dotaz",
+      "colors": "Silhouette",
+      "specs": "-",
+      "image": "kombinované kočárky/IVI 2.0 Silky Wave/Silhouette Ivi 2.0.jpg",
+      "description": "<p>Kombinovaný kočárek <b>Roan Ivi 2.0 Silky Wave</b> v barevné variantě <b>Silhouette</b>.</p><p>V galerii si můžete prohlédnout jednotlivé provedení kočárku i detail hluboké korby. Podrobné informace k této variantě vám rádi sdělíme na vyžádání.</p>"
+    }
+  ]
+};
 
-                { name: "Adaptéry na autosedačky pro kočárky Marita, Emma", priceWithVAT: "700 CZK", priceWithoutVAT: "550 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12050", image: "doplňky/adaptery.jpg", description:  `
-    <p><b>Adaptéry pro kočárky Roan Marita, Roan Emma.</b> Slouží k uchycení autosedaček k podvozku kočárku.</p>
-    <p class="extra-description">Kompatibilní jsou tyto autosedačky:</p>
-    <p>- Cybex Aton, Cybex Aton Basic, Cybex Aton Q, Cybex Aton 3 a 4, Cybex Cloud Q<br>
-       - BeSafe Izi Go<br>
-       - Maxi Cosi Pebble, Maxi Cosi Citi, Maxi Cosi CabrioFix<br>
-       - Recaro Privia<br>
-       - Kiddy Evolution</p>
-` },
-                { name: "Adaptéry na autosedačky pro kočárky Ivi, Bloom, Bass Next, Coss", priceWithVAT: "700 CZK", priceWithoutVAT: "550 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12049", image: "doplňky/adaptery2.jpg", description:
-    `<p><b>Adaptéry pro kočárky Roan Ivi, Roan Bloom, Roan Bass Next, Roan Coss a Roan Coss Classic.</b> Slouží k uchycení autosedačky k podvozku kočárku.</p>
-    <p class="extra-description">Kompatibilní jsou tyto autosedačky:</p>
-    <p>- Cybex Aton, Cybex Aton Basic, Cybex Aton Q, Cybex Aton 3 a 4, Cybex Cloud Q<br>
-       - BeSafe Izi Go, Be Safe<br>
-       - Maxi Cosi Pebble, Maxi Cosi Citi, Maxi Cosi CabrioFix</p>
-` }
-            ],
-            roanivivintage: [
-                { name: "Roan Ivi Vintage Cooper Glow Limited Edition", priceWithVAT: "18 500 CZK", priceWithoutVAT: "15 300 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller19.jpg" },
-                { name: "Roan Ivi Vintage Hazel", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller37.jpg" },
-                { name: "Roan Ivi Vintage Caviar", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller38.jpg" },
-                { name: "Roan Ivi Vintage Praline", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller40.jpg" },
-                { name: "Roan Ivi Vintage Sicilian Olive", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller41.jpg" },
-
-                { name: "Roan Ivi Vintage Almond Sugar Eko-kůže", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller45.jpg" },
-                { name: "Roan Ivi Vintage Blue Tea", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller46.jpg" },
-                { name: "Roan Ivi Vintage Butter Cream Eko-kůže", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller47.jpg" },
-                { name: "Roan Ivi Vintage Lobster", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller36.jpg" },
-
-                { name: "Roan Ivi Vintage Mocha Mousse", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller48.jpg" },
-                { name: "Roan Ivi Vintage Pixel Dark", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller49.jpg" },
-                { name: "Roan Ivi Vintage Pixel Light", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller50.jpg" },
-                { name: "Roan Ivi Vintage Raisin Rum Eko-kůže", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller51.jpg" },
-
-                { name: "Roan Ivi Vintage Sage Green", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller52.jpg" },
-                { name: "Roan Ivi Vintage Sweet Fig", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller53.jpg" },
-                { name: "Roan Ivi Vintage Turkish Coffee Black", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller54.jpg" },
-                { name: "Roan Ivi Vintage Turkish Coffee Brown", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller55.jpg" },          
-
-                { name: "Roan Ivi Vintage Luxe Grey", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/luxegrey.jpg" },          
-                { name: "Roan Ivi Vintage Gold Mood", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/goldmood.jpg" },          
-                { name: "Roan Ivi Vintage Mocca Cafe", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/moccacafe.jpg" },          
-                { name: "Roan Ivi Vintage Himalayan Green", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/himalayangreen.jpg" },
-                { name: "Roan Ivi Vintage Oyster Eko-kůže", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/oystervegan.jpg" },          
-                { name: "Roan Ivi Vintage Copper Glow", priceWithVAT: "18 500 CZK", priceWithoutVAT: "14 800 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/copperglow.jpg" },    
-            ],
-            ivi: [
-                { name: "Roan Ivi True Black", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller29.jpg" },
-                { name: "Roan Ivi Cocoa", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller24.jpg" },
-                { name: "Roan Ivi Raven", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller27.jpg" },
-
-                { name: "Roan Ivi Sesame", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller28.jpg" },
-                { name: "Roan Ivi Cocoa Rose Gold", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller30.jpg" },
-                { name: "Roan Ivi Sesame Champagne", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller57.jpg" },
-                { name: "Roan Ivi Taupe", priceWithVAT: "17 900 CZK", priceWithoutVAT: "14 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller42.jpg" }, 
-            ],
-            bassnext:[
-                { name: "Roan Bass Next Black", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "12035", image: "kombinované kočárky/stroller2.jpg" },
-                { name: "Roan Bass Next Misty Mood", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller3.jpg" },
-                { name: "Roan Bass Next Rosy Mood", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller4.jpg" },
-
-                { name: "Roan Bass Next Titanium", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "12034", image: "kombinované kočárky/stroller5.jpg" },
-                { name: "Roan Bass Next Cypress", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller8.jpg" },
-                { name: "Roan Bass Next Oreo", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller9.jpg" },            
-                { name: "Roan Bass Next Hunter Queen", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller13.jpg" },
-
-                { name: "Roan Bass Next Resort Blue", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller14.jpg" },
-                { name: "Roan Bass Next Pacific Green", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller21.jpg" },
-                { name: "Roan Bass Next Hazel", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller56.jpg" },
-
-                { name: "Roan Bass Next Seaport", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/seaport.jpg" },
-                { name: "Roan Bass Next Nougat", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/nougat.jpg" },
-                { name: "Roan Bass Next Truffle", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/truffle.jpg" },
-                { name: "Roan Bass Next Caviar", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/caviar.jpg" },
-                { name: "Roan Bass Next Bottle Green", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/bottlegreen.jpg" },
-                { name: "Roan Bass Next Dolphin Grey", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/dolphingrey.jpg" },
-                { name: "Roan Bass Next Turkish Coffee Brown", priceWithVAT: "17 200 CZK", priceWithoutVAT: "13 500 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/turkishcoffee.jpg" },
-            ],
-            bloom:[
-                { name: "Roan Bloom - Titanium", priceWithVAT: "16 800 CZK", priceWithoutVAT: "13 200 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "12032", image: "kombinované kočárky/stroller12.jpg" },
-
-            ],
-            bloom2:[
-                { name: "Roan Bloom 2.0 - Botanical Garden", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller200.jpg" },
-                { name: "Roan Bloom 2.0 - Nature Beige", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller201.jpg" },
-                { name: "Roan Bloom 2.0 - Nature Black", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller202.jpg" },
-                { name: "Roan Bloom 2.0 - Nature Grey", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller203.jpg" },
-
-                { name: "Roan Bloom 2.0 - Nature Olive", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller204.jpg" },
-                { name: "Roan Bloom 2.0 - Pure Cashmere", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller205.jpg" },
-                { name: "Roan Bloom 2.0 - Venice Night", priceWithVAT: "17 500 CZK", priceWithoutVAT: "14 463 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller206.jpg" },
-            ],
-            coss:[
-                { name: "Roan Coss - Night Trip", priceWithVAT: "16 300 CZK", priceWithoutVAT: "12 900 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller16.jpg" },
-                { name: "Roan Coss - Titanium", priceWithVAT: "16 300 CZK", priceWithoutVAT: "12 900 CZK", availability: "2-3 týdny", colors: "Černá, Šedá", specs: "-", image: "kombinované kočárky/stroller17.jpg" },
-            ],
-            cossclassic:[
-                { name: "Roan Coss Classic - Night Trip", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "12040", image: "klasické kočárky/stroller2.jpg" },
-                { name: "Roan Coss Classic - Titanium", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Šedá, Stříbrná", specs: "12042", image: "klasické kočárky/stroller3.jpg" },
-
-                { name: "Roan Coss Classic - Venice Night", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Šedá, Stříbrná", specs: "-", image: "klasické kočárky/stroller9.jpg" },
-                { name: "Roan Coss Classic - Tahitian Vanilla", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/stroller10.jpg" },
-                { name: "Roan Coss Classic - Pure Cashmere", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Šedá, Stříbrná", specs: "-", image: "klasické kočárky/stroller11.jpg" },
-                { name: "Roan Coss Classic - Botanical Garden", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/stroller12.jpg" },
-
-                { name: "Roan Coss Classic - Himalayan Green", priceWithVAT: "15 800 CZK", priceWithoutVAT: "12 500 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/himalayangreen.jpg" },
-
-            ],
-            emma:[
-                { name: "Roan Emma E - 1", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/stroller13.jpg" },
-                { name: "Roan Emma E - 2", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-2.jpg" },
-                { name: "Roan Emma E - 3", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-3.jpg" },
-                { name: "Roan Emma E - 4", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-4.jpg" },
-                { name: "Roan Emma E - 5", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-5.jpg" },
-                { name: "Roan Emma E - 6", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-6.jpg" },
-                { name: "Roan Emma E - 7", priceWithVAT: "14 500 CZK", priceWithoutVAT: "11 300 CZK", availability: "2-3 týdny", colors: "Zelená, Černá", specs: "-", image: "klasické kočárky/E-7.jpg" },
-            ],
-        };
-
-        
 const descriptions = {
     "Roan Bass Next": `
         <p><b>Kočárek trojkombinace</b> nebo <b>dvojkombinace Roan Bass Next</b> moderní kočárek - model z dílny Roan.</p>
@@ -2262,8 +3385,8 @@ const descriptions = {
              &nbsp;&nbsp;&nbsp;- Výška opěradla: 50 cm<br>
              &nbsp;&nbsp;&nbsp;- Délka opěrky nohou: 19 cm</p>
     `,
-    "Roan Ivi": `
-        <p><b>Kočárek trojkombinace</b> nebo <b>dvojkombinace Roan Ivi</b> moderní kočárek - model z dílny Roan.</p>
+    "Roan Ivi 2.0": `
+        <p><b>Kočárek trojkombinace</b> nebo <b>dvojkombinace Roan Ivi 2.0</b> moderní kočárek - model z dílny Roan.</p>
         
         <p class="extra-description">Podvozek kočárku</p>
         <p>- Lehký hliníkový rám<br>
@@ -2308,7 +3431,7 @@ const descriptions = {
            - Moskytiéra<br>
            - Pláštěnka</p>
 
-        <p class="extra-description">Technická data kočárku Roan Ivi</p>
+        <p class="extra-description">Technická data kočárku Roan Ivi 2.0</p>
         <p>- Hmotnost podvozku: cca 9,5 kg<br>
            - Hmotnost korby: cca 4,9 kg<br>
            - Hmotnost sportovní nástavby: cca 5,6 kg<br>
@@ -2668,227 +3791,241 @@ const descriptions = {
 
 
 const extraImages = {
-    "Roan Bloom 2.0 - Botanical Garden": [
-        "kombinované kočárky/stroller200n.jpg",
-    ],
-    "Roan Bloom 2.0 - Nature Beige": [
-        "kombinované kočárky/stroller201n.jpg",
-        "kombinované kočárky/stroller201nn.jpg",
-        "kombinované kočárky/stroller201nnn.jpg",
-    ],
-    "Roan Bloom 2.0 - Nature Black": [
-        "kombinované kočárky/stroller202n.jpg",
-        "kombinované kočárky/stroller202nn.jpg",
-        "kombinované kočárky/stroller202nnn.jpg",
-    ],
-    "Roan Bloom 2.0 - Nature Grey": [
-        "kombinované kočárky/stroller203n.jpg",
-        "kombinované kočárky/stroller203nn.jpg",
-        "kombinované kočárky/stroller203nnn.jpg",
-    ],
-    "Roan Bloom 2.0 - Nature Olive": [
-        "kombinované kočárky/stroller204n.jpg",
-        "kombinované kočárky/stroller204nn.jpg",
-        "kombinované kočárky/stroller204nnn.jpg",
-    ],
-    "Roan Bloom 2.0 - Pure Cashmere": [
-        "kombinované kočárky/stroller205n.jpg",
-    ],
-    "Roan Bloom 2.0 - Venice Night": [
-        "kombinované kočárky/stroller206n.jpg",
-    ],
-
-    "Roan Bass Next Black": [
-        "kombinované kočárky/stroller2n.jpg",
-    ],
-    "Roan Bass Next Misty Mood": [
-        "kombinované kočárky/stroller3n.jpg",
-    ],
-    "Roan Bass Next Rosy Mood": [
-        "kombinované kočárky/stroller4n.jpg",
-    ],
-    "Roan Bass Next Titanium": [
-        "kombinované kočárky/stroller5n.jpg",
-    ],
-    "Roan Bass Next Pacific Green": [
-        "kombinované kočárky/stroller21n.jpg",
-    ],
-    "Roan Bass Next Hazel": [
-        "kombinované kočárky/stroller56n.jpg",
-        "kombinované kočárky/stroller56nn.jpg",
-    ],
-
-        "Roan Bass Next Seaport": [
-        "kombinované kočárky/seaport1.jpg",
-    ],
-        "Roan Bass Next Nougat": [
-        "kombinované kočárky/nougat1.jpg",
-    ],
-        "Roan Bass Next Truffle": [
-        "kombinované kočárky/truffle1.jpg",
-    ],
-        "Roan Bass Next Caviar": [
-        "kombinované kočárky/caviar1.jpg",
-    ],
-        "Roan Bass Next Bottle Green": [
-        "kombinované kočárky/bottlegreen1.jpg",
-    ],
-        "Roan Bass Next Dolphin Grey": [
-        "kombinované kočárky/dolphingrey1.jpg",
-    ],
-        "Roan Bass Next Turkish Coffee Brown": [
-        "kombinované kočárky/turkishcoffee1.jpg",
-    ],
-
-    "Roan Ivi Cocoa": [
-        "kombinované kočárky/stroller24n.jpg",
-    ],
-    "Roan Ivi Cocoa Rose Gold": [
-        "kombinované kočárky/stroller30n.jpg",
-        "kombinované kočárky/stroller30nn.jpg",
-        "kombinované kočárky/stroller30nnn.jpg",
-        "kombinované kočárky/stroller30nnnn.jpg",
-    ],
-    "Roan Ivi Choco": [
-        "kombinované kočárky/stroller31n.jpg",
-        "kombinované kočárky/stroller31nn.jpg",
-        "kombinované kočárky/stroller31nnn.jpg",
-        "kombinované kočárky/stroller31nnnn.jpg",
-    ],
-    "Roan Ivi Mystic Blue Rose Gold": [
-        "kombinované kočárky/stroller32n.jpg",
-        "kombinované kočárky/stroller32nn.jpg",
-        "kombinované kočárky/stroller32nnn.jpg",
-        "kombinované kočárky/stroller32nnnn.jpg",
-    ],
-    "Roan Ivi Vintage Lobster": [
-        "kombinované kočárky/stroller36n.jpg",
-    ],
-    "Ivi Vintage Hazel": [
-        "kombinované kočárky/stroller37n.jpg",
-    ],
-    "Roan Ivi Vintage Caviar": [
-        "kombinované kočárky/stroller38n.jpg",
-    ],
-    "Roan Ivi Vintage Praline": [
-        "kombinované kočárky/stroller40n.jpg",
-    ],
-    "Roan Ivi Vintage Sicilian Olive": [
-        "kombinované kočárky/stroller41n.jpg",
-    ],
-    "Roan Ivi Taupe": [
-        "kombinované kočárky/stroller42n.jpg",
-    ],
-    "Roan Ivi Vintage Almond Sugar": [
-        "kombinované kočárky/stroller45n.jpg",
-    ],
-    "Roan Ivi Vintage Blue Tea": [
-        "kombinované kočárky/stroller46n.jpg",
-    ],
-    "Roan Ivi Vintage Mocha Mousse": [
-        "kombinované kočárky/stroller48n.jpg",
-    ],
-    "Roan Ivi Vintage Pixel Dark": [
-        "kombinované kočárky/stroller49n.jpg",
-    ],
-    "Roan Ivi Vintage Pixel Light": [
-        "kombinované kočárky/stroller50n.jpg",
-    ],
-    "Roan Ivi Vintage Raisin Rum": [
-        "kombinované kočárky/stroller51n.jpg",
-    ],
-    "Roan Ivi Vintage Sage Green": [
-        "kombinované kočárky/stroller52n.jpg",
-    ],
-    "Roan Ivi Vintage Sweet Fig": [
-        "kombinované kočárky/stroller53n.jpg",
-    ],
-    "Roan Ivi Vintage Turkish Coffee Black": [
-        "kombinované kočárky/stroller54n.jpg",
-    ],
-    "Roan Ivi Vintage Turkish Coffee Brown": [
-        "kombinované kočárky/stroller55n.jpg",
-    ],
-
-    "Roan Ivi Vintage Luxe Grey": [
-        "kombinované kočárky/luxegrey1.jpg",
-    ],
-    "Roan Ivi Vintage Gold Mood": [
-        "kombinované kočárky/goldmood1.jpg",
-    ],
-    "Roan Ivi Vintage Mocca Cafe": [
-        "kombinované kočárky/moccacafe1.jpg",
-    ],
-    "Roan Ivi Vintage Himalayan Green": [
-        "kombinované kočárky/himalayangreen1.jpg",
-    ],
-    "Roan Ivi Vintage Oyster Eko-kůže": [
-        "kombinované kočárky/oystervegan1.jpg",
-    ],
-    "Roan Ivi Vintage Copper Glow": [
-        "kombinované kočárky/copperglow1.jpg",
-    ],
-//klasické
-
-
-    "Roan Coss Classic - Himalayan Green": [
-        "klasické kočárky/himalayangreen1.jpg",
-    ],
-
-    "Roan Coss Classic - Night Trip": [
-        "klasické kočárky/stroller2n.jpg",
-    ],
-    "Roan Coss Classic - Venice Night": [
-        "klasické kočárky/stroller9n.jpg",
-        "klasické kočárky/stroller9nn.jpg",
-        "klasické kočárky/stroller9nnn.jpg",
-    ],
-    "Roan Coss Classic - Tahitian Vanilla": [
-        "klasické kočárky/stroller10n.jpg",
-        "klasické kočárky/stroller10nn.jpg",
-        "klasické kočárky/stroller10nnn.jpg",
-    ],
-    "Roan Coss Classic - Pure Cashmere": [
-        "klasické kočárky/stroller11n.jpg",
-        "klasické kočárky/stroller11nn.jpg",
-        "klasické kočárky/stroller11nnn.jpg",
-    ],
-    "Roan Coss Classic - Botanical Garden": [
-        "klasické kočárky/stroller12n.jpg",
-        "klasické kočárky/stroller12nn.jpg",
-        "klasické kočárky/stroller12nnn.jpg",
-    ],
-    "Roan Cosmo Black": [
-        "doplňky/autosedacka1.jpg",
-        "doplňky/autosedacka2.jpg",
-        "doplňky/autosedacka3.jpg",
-    ],
-    "Roan Emma E-1":[
-        "klasické kočárky/stroller13.jpg",
-        "klasické kočárky/stroller13n.jpg",
-        "klasické kočárky/stroller13nn.jpg",
-        "klasické kočárky/stroller13nnn.jpg",
-        "klasické kočárky/stroller13nnnn.jpg",
-        "klasické kočárky/stroller135n.jpg",
-        "klasické kočárky/stroller136n.jpg",
-        "klasické kočárky/stroller137n.jpg",
-        "klasické kočárky/stroller138n.jpg",
-        "klasické kočárky/stroller139n.jpg",
-        ],
+  "Roan Bloom 2.0 - Botanical Garden": [
+    "kombinované kočárky/stroller200n.jpg"
+  ],
+  "Roan Bloom 2.0 - Nature Beige": [
+    "kombinované kočárky/stroller201n.jpg",
+    "kombinované kočárky/stroller201nn.jpg",
+    "kombinované kočárky/stroller201nnn.jpg"
+  ],
+  "Roan Bloom 2.0 - Nature Black": [
+    "kombinované kočárky/stroller202n.jpg",
+    "kombinované kočárky/stroller202nn.jpg",
+    "kombinované kočárky/stroller202nnn.jpg"
+  ],
+  "Roan Bloom 2.0 - Nature Grey": [
+    "kombinované kočárky/stroller203n.jpg",
+    "kombinované kočárky/stroller203nn.jpg",
+    "kombinované kočárky/stroller203nnn.jpg"
+  ],
+  "Roan Bloom 2.0 - Nature Olive": [
+    "kombinované kočárky/stroller204n.jpg",
+    "kombinované kočárky/stroller204nn.jpg",
+    "kombinované kočárky/stroller204nnn.jpg"
+  ],
+  "Roan Bloom 2.0 - Pure Cashmere": [
+    "kombinované kočárky/stroller205n.jpg"
+  ],
+  "Roan Bloom 2.0 - Venice Night": [
+    "kombinované kočárky/stroller206n.jpg"
+  ],
+  "Roan Bass Next Misty Mood": [
+    "kombinované kočárky/stroller3n.jpg"
+  ],
+  "Roan Bass Next Rosy Mood": [
+    "kombinované kočárky/stroller4n.jpg"
+  ],
+  "Roan Bass Next Titanium": [
+    "kombinované kočárky/stroller5n.jpg"
+  ],
+  "Roan Bass Next Pacific Green": [
+    "kombinované kočárky/stroller21n.jpg"
+  ],
+  "Roan Bass Next Hazel": [
+    "kombinované kočárky/stroller56n.jpg",
+    "kombinované kočárky/stroller56nn.jpg"
+  ],
+  "Roan Bass Next Seaport": [
+    "kombinované kočárky/seaport1.jpg"
+  ],
+  "Roan Bass Next Nougat": [
+    "kombinované kočárky/nougat1.jpg"
+  ],
+  "Roan Bass Next Truffle": [
+    "kombinované kočárky/truffle1.jpg"
+  ],
+  "Roan Bass Next Caviar": [
+    "kombinované kočárky/caviar1.jpg"
+  ],
+  "Roan Bass Next Bottle Green": [
+    "kombinované kočárky/bottlegreen1.jpg"
+  ],
+  "Roan Bass Next Dolphin Grey": [
+    "kombinované kočárky/dolphingrey1.jpg"
+  ],
+  "Roan Bass Next Turkish Coffee Brown": [
+    "kombinované kočárky/turkishcoffee1.jpg"
+  ],
+  "Roan Ivi 2.0 Cocoa": [
+    "kombinované kočárky/stroller24n.jpg"
+  ],
+  "Roan Ivi 2.0 Cocoa Rose Gold": [
+    "kombinované kočárky/stroller30n.jpg",
+    "kombinované kočárky/stroller30nn.jpg",
+    "kombinované kočárky/stroller30nnn.jpg",
+    "kombinované kočárky/stroller30nnnn.jpg"
+  ],
+  "Roan Ivi 2.0 Choco": [
+    "kombinované kočárky/stroller31n.jpg",
+    "kombinované kočárky/stroller31nn.jpg",
+    "kombinované kočárky/stroller31nnn.jpg",
+    "kombinované kočárky/stroller31nnnn.jpg"
+  ],
+  "Roan Ivi 2.0 Mystic Blue Rose Gold": [
+    "kombinované kočárky/stroller32n.jpg",
+    "kombinované kočárky/stroller32nn.jpg",
+    "kombinované kočárky/stroller32nnn.jpg",
+    "kombinované kočárky/stroller32nnnn.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Lobster": [
+    "kombinované kočárky/stroller36n.jpg"
+  ],
+  "Ivi 2.0 Vintage Hazel": [
+    "kombinované kočárky/stroller37n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Caviar": [
+    "kombinované kočárky/stroller38n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Praline": [
+    "kombinované kočárky/stroller40n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Sicilian Olive": [
+    "kombinované kočárky/stroller41n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Almond Sugar": [
+    "kombinované kočárky/stroller45n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Blue Tea": [
+    "kombinované kočárky/stroller46n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Mocha Mousse": [
+    "kombinované kočárky/stroller48n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Pixel Dark": [
+    "kombinované kočárky/stroller49n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Pixel Light": [
+    "kombinované kočárky/stroller50n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Raisin Rum": [
+    "kombinované kočárky/stroller51n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Sage Green": [
+    "kombinované kočárky/stroller52n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Sweet Fig": [
+    "kombinované kočárky/stroller53n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Turkish Coffee Black": [
+    "kombinované kočárky/stroller54n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Turkish Coffee Brown": [
+    "kombinované kočárky/stroller55n.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Luxe Grey": [
+    "kombinované kočárky/luxegrey1.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Gold Mood": [
+    "kombinované kočárky/goldmood1.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Himalayan Green": [
+    "kombinované kočárky/himalayangreen1.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Oyster Eko-kůže": [
+    "kombinované kočárky/oystervegan1.jpg"
+  ],
+  "Roan Ivi 2.0 Vintage Copper Glow": [
+    "kombinované kočárky/copperglow1.jpg"
+  ],
+  "Roan Coss Classic - Himalayan Green": [
+    "klasické kočárky/himalayangreen1.jpg"
+  ],
+  "Roan Coss Classic - Night Trip": [
+    "klasické kočárky/stroller2n.jpg"
+  ],
+  "Roan Coss Classic - Venice Night": [
+    "klasické kočárky/stroller9n.jpg",
+    "klasické kočárky/stroller9nn.jpg",
+    "klasické kočárky/stroller9nnn.jpg"
+  ],
+  "Roan Coss Classic - Tahitian Vanilla": [
+    "klasické kočárky/stroller10n.jpg",
+    "klasické kočárky/stroller10nn.jpg",
+    "klasické kočárky/stroller10nnn.jpg"
+  ],
+  "Roan Coss Classic - Pure Cashmere": [
+    "klasické kočárky/stroller11n.jpg",
+    "klasické kočárky/stroller11nn.jpg",
+    "klasické kočárky/stroller11nnn.jpg"
+  ],
+  "Roan Coss Classic - Botanical Garden": [
+    "klasické kočárky/stroller12n.jpg",
+    "klasické kočárky/stroller12nn.jpg",
+    "klasické kočárky/stroller12nnn.jpg"
+  ],
+  "Roan Cosmo Black": [
+    "doplňky/autosedacka1.jpg",
+    "doplňky/autosedacka2.jpg",
+    "doplňky/autosedacka3.jpg"
+  ],
+  "Roan Emma E-1": [
+    "klasické kočárky/stroller13.jpg",
+    "klasické kočárky/stroller13n.jpg",
+    "klasické kočárky/stroller13nn.jpg",
+    "klasické kočárky/stroller13nnn.jpg",
+    "klasické kočárky/stroller13nnnn.jpg",
+    "klasické kočárky/stroller135n.jpg",
+    "klasické kočárky/stroller136n.jpg",
+    "klasické kočárky/stroller137n.jpg",
+    "klasické kočárky/stroller138n.jpg",
+    "klasické kočárky/stroller139n.jpg"
+  ],
+  "Roan Ivi 2.0 Silky Wave Dune Silk": [
+    "kombinované kočárky/IVI 2.0 Silky Wave/Dune Silk Ivi 2.0 s1.png",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Dune Silk Ivi 2.0 v2.png",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Dune Silk top view.jpg"
+  ],
+  "Roan Ivi 2.0 Silky Wave Amber Silk": [
+    "kombinované kočárky/IVI 2.0 Silky Wave/Amber Silk Ivi 2.0 s1.png",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Amber Silk Ivi 2.0 v2.jpg",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Amber Silk top view.jpg"
+  ],
+  "Roan Ivi 2.0 Silky Wave Silk Soft": [
+    "kombinované kočárky/IVI 2.0 Silky Wave/Silk Soft Ivi 2.0 s1.png",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Silk Soft Ivi 2.0  v2.jpg",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Silk Soft top view.jpg"
+  ],
+  "Roan Ivi 2.0 Silky Wave Black Silk": [
+    "kombinované kočárky/IVI 2.0 Silky Wave/Black Silk Ivi 2.0 s1.png",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Black Silk Ivi 2.0  v2.jpg",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Black Silk top view — kopia.jpg"
+  ],
+  "Roan Ivi 2.0 Silky Wave Silhouette": [
+    "kombinované kočárky/IVI 2.0 Silky Wave/Silhouette Ivi 2.0 s1.png",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Silhouette Ivi 2.0 v2.jpg",
+    "kombinované kočárky/IVI 2.0 Silky Wave/Silhouette top view.jpg"
+  ]
 };
-
 
 /* Catalogue interactions. No external dependencies. */
 const $ = id => document.getElementById(id);
 const icon = (name, extra = '') => `<svg class="icon" aria-hidden="true" ${extra}><use href="#i-${name}"/></svg>`;
 const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('cs');
-const money = value => value.replace('CZK', 'Kč');
-const price = product => Number(product.priceWithVAT.replace(/[^0-9]/g, ''));
+const money = value => value ? value.replace('CZK', 'Kč') : 'Cena na dotaz';
+const price = product => product.priceWithVAT ? Number(product.priceWithVAT.replace(/[^0-9]/g, '')) : null;
+function comparePrice(a,b,direction) {
+  const first = price(a), second = price(b);
+  if(first === null) return second === null ? 0 : 1;
+  if(second === null) return -1;
+  return (first-second)*direction;
+}
 const scrollToElement = element => element.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block:'start'});
 const models = [
-  {id:'roanivivintage',name:'Ivi Vintage',prefix:'Roan Ivi Vintage',image:'modely/stroller1.jpg',category:'kombinovane'},
-  {id:'ivi',name:'Ivi',prefix:'Roan Ivi',image:'modely/stroller2.jpg',category:'kombinovane'},
+  {id:'ivi',name:'Ivi 2.0',prefix:'Roan Ivi 2.0',image:'modely/stroller2.jpg',category:'kombinovane'},
+  {id:'roanivivintage',name:'Ivi 2.0 Vintage',prefix:'Roan Ivi 2.0 Vintage',image:'modely/stroller1.jpg',category:'kombinovane'},
+  {id:'ivisilkywave',name:'Ivi 2.0 Silky Wave',prefix:'Roan Ivi 2.0 Silky Wave',image:"kombinované kočárky/IVI 2.0 Silky Wave/Dune Silk Ivi 2.0.png",category:'kombinovane'},
   {id:'bassnext',name:'Bass Next',prefix:'Roan Bass Next',image:'modely/stroller3.jpg',category:'kombinovane'},
   {id:'bloom',name:'Bloom',prefix:'Roan Bloom',image:'modely/stroller4.png',category:'kombinovane'},
   {id:'bloom2',name:'Bloom 2.0',prefix:'Roan Bloom 2.0',image:'modely/Bloom 2.0 Botanical Garden.jpg',category:'kombinovane'},
@@ -2912,7 +4049,7 @@ let currentProduct = null;
 let currentProductImages = [];
 let currentIndex = 0;
 const missingImages = new Set([]);
-const galleryAliases = {"Ivi Vintage Hazel":"Roan Ivi Vintage Hazel","Roan Ivi Vintage Almond Sugar":"Roan Ivi Vintage Almond Sugar Eko-kůže","Roan Ivi Vintage Raisin Rum":"Roan Ivi Vintage Raisin Rum Eko-kůže","Roan Emma E-1":"Roan Emma E - 1"};
+const galleryAliases = {"Ivi 2.0 Vintage Hazel":"Roan Ivi 2.0 Vintage Hazel","Roan Ivi 2.0 Vintage Almond Sugar":"Roan Ivi 2.0 Vintage Almond Sugar Eko-kůže","Roan Ivi 2.0 Vintage Raisin Rum":"Roan Ivi 2.0 Vintage Raisin Rum Eko-kůže","Roan Emma E-1":"Roan Emma E - 1"};
 Object.entries(galleryAliases).forEach(([oldName, newName]) => {
   if (extraImages[oldName] && !extraImages[newName]) extraImages[newName] = extraImages[oldName];
 });
@@ -2944,6 +4081,13 @@ function renderModels() {
     return `<button class="model-tile" data-model="${model.id}" aria-pressed="false" aria-label="Filtrovat model Roan ${model.name}"><img src="${model.image}" alt="" width="130" height="100" loading="lazy"><strong>${model.name}</strong><span>${variantCount(count)}</span></button>`;
   }).join('');
 }
+function paginationButtons(pageCount) {
+  const numbers=new Set([1,pageCount,state.page-1,state.page,state.page+1]);
+  if(state.page<3) numbers.add(3);
+  if(state.page>pageCount-2) numbers.add(pageCount-2);
+  const pages=[...numbers].filter(page=>page>0 && page<=pageCount).sort((a,b)=>a-b);
+  return pages.map((page,i)=>(i && page-pages[i-1]>1 ? '<span class="page-gap" aria-hidden="true">…</span>' : '')+`<button data-page="${page}" aria-label="Strana ${page}" ${state.page===page?'aria-current="page"':''}>${page}</button>`).join('');
+}
 function renderCatalog() {
   const query = normalize(state.query.trim());
   visibleProducts = allProducts.filter(product =>
@@ -2951,8 +4095,8 @@ function renderCatalog() {
     (!state.model || modelOf(product)?.id === state.model) &&
     (!query || normalize(`${product.name} ${product.specs} ${product.colors}`).includes(query))
   );
-  if(state.sort === 'price-asc') visibleProducts.sort((a,b) => price(a)-price(b));
-  if(state.sort === 'price-desc') visibleProducts.sort((a,b) => price(b)-price(a));
+  if(state.sort === 'price-asc') visibleProducts.sort((a,b) => comparePrice(a,b,1));
+  if(state.sort === 'price-desc') visibleProducts.sort((a,b) => comparePrice(a,b,-1));
   if(state.sort === 'name') visibleProducts.sort((a,b) => a.name.localeCompare(b.name,'cs'));
   const pageCount = Math.max(1,Math.ceil(visibleProducts.length/pageSize));
   state.page = Math.min(state.page,pageCount);
@@ -2963,7 +4107,7 @@ function renderCatalog() {
     const productIndex = allProducts.indexOf(product);
     const variant = model ? product.name.slice(model.prefix.length).replace(/^\s*-\s*/, '').trim() : product.name;
     const photo = missingImages.has(product.image) ? photoPlaceholder : `<img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}" width="400" height="400" loading="lazy" decoding="async">`;
-    return `<article class="product-card"><div class="product-button"><span class="product-image">${photo}${product.name.includes('Limited Edition') ? '<span class="product-tag">Limited edition</span>' : ''}<span class="product-arrow">${icon('arrow')}</span></span><div class="product-info"><span class="product-model">${model ? `Roan ${model.name}` : 'Doplňky ROAN'}</span><h3><button class="product-open" data-product="${productIndex}" aria-label="Zobrazit detail: ${escapeHTML(product.name)}" aria-describedby="price-${productIndex} tax-${productIndex}">${escapeHTML(variant || product.name)}</button></h3><span class="product-price" id="price-${productIndex}"><span>${money(product.priceWithVAT)}</span><small>s DPH</small></span><span class="price-without" id="tax-${productIndex}">${money(product.priceWithoutVAT)} bez DPH</span></div></div></article>`;
+    return `<article class="product-card"><div class="product-button"><span class="product-image">${photo}${product.name.includes('Limited Edition') ? '<span class="product-tag">Limited edition</span>' : ''}<span class="product-arrow">${icon('arrow')}</span></span><div class="product-info"><span class="product-model">${model ? `Roan ${model.name}` : 'Doplňky ROAN'}</span><h3><button class="product-open" data-product="${productIndex}" aria-label="Zobrazit detail: ${escapeHTML(product.name)}" aria-describedby="price-${productIndex} tax-${productIndex}">${escapeHTML(variant || product.name)}</button></h3><span class="product-price" id="price-${productIndex}"><span>${money(product.priceWithVAT)}</span>${product.priceWithVAT ? '<small>s DPH</small>' : ''}</span><span class="price-without" id="tax-${productIndex}">${product.priceWithoutVAT ? money(product.priceWithoutVAT)+' bez DPH' : ''}</span></div></div></article>`;
   }).join('') : `<div class="empty-state"><h3>Tuhle variantu jsme nenašli.</h3><p>Zkuste jiný název nebo barvu. Hledání probíhá ve vybrané kategorii a modelové řadě.</p><button class="btn btn-primary" id="resetFilters">Zobrazit celou kolekci ${icon('arrow')}</button></div>`;
   $('resultCount').textContent = `${visibleProducts.length} ${visibleProducts.length === 1 ? 'produkt' : visibleProducts.length > 1 && visibleProducts.length < 5 ? 'produkty' : 'produktů'}`;
   $('searchClear').hidden = !state.query;
@@ -2972,7 +4116,7 @@ function renderCatalog() {
   $('activeFilter').hidden = !state.model;
   $('activeFilterName').textContent = state.model ? `Model: Roan ${models.find(model => model.id === state.model).name}` : '';
   $('pagination').hidden = !visibleProducts.length;
-  $('pagination').innerHTML = `<span class="pagination-info">Zobrazeno ${offset+1}–${Math.min(offset+pageSize,visibleProducts.length)} z ${visibleProducts.length} produktů</span>${pageCount > 1 ? `<nav class="page-buttons" aria-label="Stránkování katalogu"><button data-page="${state.page-1}" aria-label="Předchozí strana" ${state.page === 1 ? 'disabled' : ''}>${icon('arrow','style="transform:rotate(180deg)"')}</button>${Array.from({length:pageCount},(_,i) => `<button data-page="${i+1}" aria-label="Strana ${i+1}" ${state.page === i+1 ? 'aria-current="page"' : ''}>${i+1}</button>`).join('')}<button data-page="${state.page+1}" aria-label="Další strana" ${state.page === pageCount ? 'disabled' : ''}>${icon('arrow')}</button></nav>` : ''}`;
+  $('pagination').innerHTML = `<span class="pagination-info">Zobrazeno ${offset+1}–${Math.min(offset+pageSize,visibleProducts.length)} z ${visibleProducts.length} produktů</span>${pageCount > 1 ? `<nav class="page-buttons" aria-label="Stránkování katalogu"><button data-page="${state.page-1}" aria-label="Předchozí strana" ${state.page === 1 ? 'disabled' : ''}>${icon('arrow','style="transform:rotate(180deg)"')}</button>${paginationButtons(pageCount)}<button data-page="${state.page+1}" aria-label="Další strana" ${state.page === pageCount ? 'disabled' : ''}>${icon('arrow')}</button></nav>` : ''}`;
 }
 function showCategory(category, shouldScroll = false) {
   const model = models.find(item => item.id === category);
@@ -3035,12 +4179,14 @@ function openDetail(product) {
   $('detailTitle').textContent = product.name;
   $('detailModel').textContent = modelOf(product)?.name || 'Doplňky ROAN';
   $('detailPriceWithVAT').textContent = money(product.priceWithVAT);
-  $('detailPriceWithoutVAT').textContent = money(product.priceWithoutVAT);
+  $('detailPriceWithoutVAT').textContent = product.priceWithoutVAT ? money(product.priceWithoutVAT) : '';
+  $('detailPriceWithVAT').nextElementSibling.hidden = !product.priceWithVAT;
+  $('detailPriceWithoutVAT').parentElement.hidden = !product.priceWithoutVAT;
   $('detailAvailability').textContent = product.availability;
   $('detailSpecs').textContent = product.specs === '-' ? 'Neuveden' : product.specs;
   $('detailDescription').innerHTML = product.description;
   $('expanded-section').open = false;
-  $('extraNote').hidden = product.name !== 'Roan Ivi Pine Green';
+  $('extraNote').hidden = product.name !== 'Roan Ivi 2.0 Pine Green';
   $('extraNote').textContent = 'Aktuálně dostupné pouze na nové konstrukci v barvě champagne (na obrázku).';
   currentProductImages = [...new Set([product.image,...(extraImages[product.name] || [])])].filter(path => !missingImages.has(path));
   $('detailThumbnails').innerHTML = currentProductImages.length > 1 ? currentProductImages.map((src,i) => `<button data-photo="${i}" aria-label="Fotografie ${i+1} z ${currentProductImages.length}" aria-pressed="${i === 0}"><img src="${escapeHTML(src)}" alt="" width="62" height="62" loading="lazy"></button>`).join('') : '';
