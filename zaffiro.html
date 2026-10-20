@@ -1034,9 +1034,12 @@
     }
     .detail-layout {
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns:repeat(2,minmax(0,1fr));
       gap:40px;
       padding:32px
+    }
+    .detail-layout > * {
+      min-width:0
     }
     .detail-photo {
       aspect-ratio:1/1;
@@ -1076,20 +1079,35 @@
       height:14px
     }
     .detail-thumbnails {
-      display:flex;
+      display:grid;
+      grid-template-columns:repeat(var(--thumbnail-columns,4),minmax(0,1fr));
       gap:8px;
-      overflow:auto;
-      padding:10px 3px 6px
+      padding:10px 0 6px;
+      min-width:0
     }
     .detail-thumbnails button {
-      width:62px;
-      height:62px;
-      flex-shrink:0;
+      width:100%;
+      height:auto;
+      aspect-ratio:1;
+      min-width:0;
       background:#f0f0eb;
       padding:4px;
       border:1px solid var(--line);
       border-radius:3px
     }
+    .more-photos {
+      display:block;
+      margin-top:6px;
+      padding:10px 14px;
+      min-height:44px;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      color:var(--green);
+      background:transparent;
+      font-size:12px;
+      font-weight:600
+    }
+    .more-photos:hover { background:var(--cream); }
     .detail-thumbnails button[aria-pressed=true] {
       border:2px solid var(--green)
     }
@@ -1105,6 +1123,7 @@
     .detail-copy h2 {
       font-size:36px;
       line-height:1.15;
+      overflow-wrap:anywhere;
       margin-top:12px
     }
     .detail-price {
@@ -1786,7 +1805,7 @@
         font-size:9px
       }
       .detail-layout {
-        grid-template-columns:1fr;
+        grid-template-columns:minmax(0,1fr);
         gap:10px;
         padding:18px
       }
@@ -1838,9 +1857,6 @@
       .gallery-footer {
         font-size:10px;
         padding:12px 16px
-      }
-      .gallery-footer .keyboard-hint {
-        display:none
       }
     }
     @media(min-width:701px) {
@@ -1969,11 +1985,11 @@
   <div class="announcement"><div class="container"><span>ARMAMI · Fusaky, rukávníky a dečky Zaffiro</span><span class="announcement-region">Pohodlí pro společné chvíle <span aria-hidden="true">&nbsp; / &nbsp;</span> CZ & SK</span></div></div>
   <header class="site-header"><div class="container header-inner">
     <a href="#nahoru" class="brand zaffiro-brand" aria-label="Zaffiro — úvod"><span class="brand-mark"><img src="zaffiro-logo1.png" alt="Zaffiro" width="156" height="104"></span><span class="brand-caption">Na dosah.<br>V teple.</span></a>
-    <nav class="main-nav" id="mainNav" aria-label="Hlavní navigace"><a href="#katalog" data-section="katalog" aria-current="location">Kolekce Zaffiro</a><a href="#o-nas" data-section="o-nas">O nás</a><a href="#prodejci" data-section="prodejci">Kde koupit</a><a href="#kontakt" data-section="kontakt">Kontakt</a><a class="mobile-zaffiro" href="index.html">Kočárky ROAN ↗</a></nav>
+    <nav class="main-nav" id="mainNav" aria-label="Hlavní navigace"><a href="#katalog" data-section="katalog" aria-current="location">Kolekce Zaffiro</a><a href="#o-nas" data-section="o-nas">O nás</a><a href="#kontakt" data-section="kontakt">Kontakt</a><a class="mobile-zaffiro" href="index.html">Kočárky ROAN ↗</a></nav>
     <div class="header-tools"><a class="zaffiro-link" href="index.html">ROAN <svg class="icon"><use href="#i-external"/></svg></a><button class="icon-button header-search" id="headerSearch" aria-label="Vyhledat v katalogu"><svg class="icon"><use href="#i-search"/></svg></button><button class="icon-button menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav" aria-label="Otevřít navigaci"><svg class="icon"><use href="#i-menu"/></svg></button></div>
   </div></header>
   <main>
-    <section class="hero" aria-labelledby="heroTitle"><div class="hero-copy"><span class="eyebrow">Hřejivý svět Zaffiro</span><h1 id="heroTitle">Malé chvíle.<br><em>Velké pohodlí.</em></h1><p class="hero-description">Fusaky, rukávníky a dečky pro vaše společné chvíle. Objevte hřejivé materiály a barvy, které přirozeně zapadnou do vašeho světa.</p><div class="hero-actions"><a href="#katalog" class="btn btn-primary">Prozkoumat kolekci <svg class="icon"><use href="#i-arrow"/></svg></a><a href="#prodejci" class="text-link">Najít prodejce <svg class="icon"><use href="#i-external"/></svg></a></div><p class="hero-note"><svg class="icon"><use href="#i-shield"/></svg>S výběrem vám rádi pomůžeme</p></div><div class="hero-visual"><img src="assets/zaffiro-hero.webp" alt="Maminka drží miminko v měkké zavinovačce" width="1920" height="1080" fetchpriority="high"><div class="hero-caption"><div><span class="eyebrow">Nejkrásnější místo je v náručí</span><p>Blízko. V teple. Spolu.</p></div><span>Zaffiro / Kolekce</span></div></div></section>
+    <section class="hero" aria-labelledby="heroTitle"><div class="hero-copy"><span class="eyebrow">Hřejivý svět Zaffiro</span><h1 id="heroTitle">Malé chvíle.<br><em>Velké pohodlí.</em></h1><p class="hero-description">Fusaky, rukávníky a dečky pro vaše společné chvíle. Objevte hřejivé materiály a barvy, které přirozeně zapadnou do vašeho světa.</p><div class="hero-actions"><a href="#katalog" class="btn btn-primary">Prozkoumat kolekci <svg class="icon"><use href="#i-arrow"/></svg></a><a href="#kontakt" class="text-link">Kontaktujte nás <svg class="icon"><use href="#i-external"/></svg></a></div><p class="hero-note"><svg class="icon"><use href="#i-shield"/></svg>S výběrem vám rádi pomůžeme</p></div><div class="hero-visual"><img src="assets/zaffiro-hero.webp" alt="Maminka drží miminko v měkké zavinovačce" width="1920" height="1080" fetchpriority="high"><div class="hero-caption"><div><span class="eyebrow">Nejkrásnější místo je v náručí</span><p>Blízko. V teple. Spolu.</p></div><span>Zaffiro / Kolekce</span></div></div></section>
     <div class="promise-bar"><div class="container promise-inner"><div class="promise"><svg class="icon"><use href="#i-heart"/></svg><span>Více než 20 let zkušeností</span></div><div class="promise"><svg class="icon"><use href="#i-sun"/></svg><span>Hřejivé materiály</span></div><div class="promise"><svg class="icon"><use href="#i-shield"/></svg><span>Sladěné kolekce a barvy</span></div></div></div>
     <section class="collection container" id="katalog" aria-labelledby="collectionTitle"><div class="section-intro"><div><span class="eyebrow">01 / Pohodlí pro každý den</span><h2 id="collectionTitle">Zabaleno do pohodlí.</h2></div><p>Od prvních dnů po zimní procházky.<br>Najděte svůj model, kolekci a oblíbenou barvu.</p></div>
       <div id="modelSection"><p class="model-label">Vyberte si model fusaku</p><div class="model-grid" id="modelGrid" aria-label="Výběr modelu fusaku"></div></div>
@@ -1984,33 +2000,11 @@
       <noscript><p>Pro procházení modelů zapněte JavaScript. S výběrem vám rádi pomůžeme na <a href="tel:+420608616027">+420 608 616 027</a>.</p></noscript>
     </section>
     <section class="story container" id="o-nas" aria-labelledby="storyTitle"><img class="story-image" src="assets/zaffiro-story.webp" alt="Tatínek s miminkem a kočárkem při společné procházce" width="1920" height="1080" loading="lazy"><div class="story-copy"><span class="eyebrow">02 / Lidé za vaší cestou</span><h2 id="storyTitle">Blízkost, která<br>zahřeje.</h2><p>Jsme firma s více než 20 lety zkušeností v oblasti kočárků a dětského zboží. Společnost ARMAMI s.r.o. je oficiálním distributorem značky ROAN pro Českou republiku a Slovensko.</p><p>Nabízíme pouze kvalitní a moderní výrobky, které splňují nejvyšší standardy a nároky na bezpečnost a komfort.</p><a class="text-link" href="#kontakt">Jsme tu pro vás <svg class="icon"><use href="#i-arrow"/></svg></a></div></section>
-    <section class="retailers container" id="prodejci" aria-labelledby="retailerTitle"><div class="section-intro"><div><span class="eyebrow">03 / Blíž k vám</span><h2 id="retailerTitle">Najděte své Zaffiro.</h2></div><p>Naše produkty si můžete zakoupit u těchto prodejců v České republice a na Slovensku.</p></div><div class="retailer-list"><a href="https://www.zirafa-shop.cz/">Dětský obchůdek Žirafa<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.babyadore.sk/">BabyAdore<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.bambino.cz/">Bambino.cz<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.babyplace.cz/">BabyPlace<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.kocarky.cz/">Daniela Kočárky<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.detskydum.cz/">Dětský Dům<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.eshopbaby.cz/">EshopBaby<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.nakupujskacenkou.cz/">Dětský Svět<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.kocarky-kocarek.cz/">HAPU<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.nejlepsikocarky.cz/">John Nell<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.mimisk.eu/">MimiSk<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://shop.modrykonik.sk/sk-eur/sk/">ModrýKoník.sk<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.malvik.cz/">Malvík<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.mojkocik.sk/">MojKočík SK<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.mujandilek.cz/">MůjAndílek<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.kocarek.cz/">Kočárek.cz<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.detskyruzek.cz/">Dětský Růžek<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="http://www.bambino-mladaboleslav.cz/bambino">Bambino Mladá Boleslav<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.sambaby.com/">SAMBABY<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.123kociky.sk/">123kociky.sk<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="https://www.kocarkov.cz/">Kočárkov<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
-<a href="http://www.bambinomelnik.cz/">Bambino Mělník<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a></div></section>
     <aside class="zaffiro-banner container" aria-label="Katalog kočárků ROAN"><div><span class="eyebrow">Na každou společnou cestu</span><h2>Velký svět. Váš kočárek ROAN.</h2></div><a class="btn btn-outline" href="index.html">Prohlédnout kočárky ROAN <svg class="icon"><use href="#i-external"/></svg></a></aside>
   </main>
   <footer class="site-footer" id="kontakt"><div class="container"><div class="footer-grid"><div class="footer-brand"><img src="logo.png" alt="ARMAMI s.r.o." width="866" height="288" loading="lazy"><p>Oficiální distributor značky ROAN pro Českou republiku a Slovensko.</p></div><div><h2 class="footer-title">Jsme tu pro vás</h2><div class="footer-contact"><a href="tel:+420608616027">+420 608 616 027</a><a href="mailto:armami@email.cz">armami@email.cz</a></div><p class="muted" style="font-size:10px;color:#bac7b9">Pomůžeme vám s výběrem.</p></div><div><h2 class="footer-title">Kde nás najdete</h2><address>Adresa pro doručení:<br>Máchova 1147/1<br>742 21 Kopřivnice<small>Fakturační adresa: Husova 388/7b<br>IČO: 22317031 · DIČ: CZ22317031</small></address></div><div><h2 class="footer-title">Inspirace na každý den</h2><div class="social-links"><a href="https://www.instagram.com/kocarky_roan/">Instagram <svg class="icon"><use href="#i-external"/></svg></a><a href="https://www.facebook.com/kocarkyroan">Facebook <svg class="icon"><use href="#i-external"/></svg></a><a href="https://www.youtube.com/channel/UCqmXOPQcLaGiNu4TeCRU5Mw">YouTube <svg class="icon"><use href="#i-external"/></svg></a></div></div></div><div class="footer-bottom"><span>© <span id="currentYear">2026</span> ARMAMI s.r.o. · S péčí pro vaše začátky.</span><a href="#nahoru">Zpět nahoru <svg class="icon"><use href="#i-arrow"/></svg></a></div></div></footer>
-  <dialog class="product-dialog" id="detail" aria-labelledby="detailTitle"><div class="dialog-bar"><span class="eyebrow">Zaffiro / Detail produktu</span><button type="button" class="icon-button" id="closeDetail" aria-label="Zavřít detail produktu" autofocus><svg class="icon"><use href="#i-close"/></svg></button></div><div class="detail-layout"><div><div class="detail-photo" id="detailPhoto"><button id="zoomImage" aria-label="Zvětšit fotografii produktu"><img id="detailImage" alt=""></button><span class="zoom-hint" id="zoomHint"><svg class="icon"><use href="#i-search"/></svg>Zvětšit fotografii</span><div class="photo-placeholder" id="detailPlaceholder" hidden><svg class="icon"><use href="#i-photo"/></svg><span>Fotografie této varianty se připravuje.</span></div></div><div class="detail-thumbnails" id="detailThumbnails" aria-label="Fotografie produktu"></div></div><div class="detail-copy"><span class="eyebrow" id="detailModel"></span><h2 id="detailTitle"></h2><p class="detail-collection" id="detailCollection"></p><p class="detail-price"><span id="detailPriceWithVAT"></span> <small>s DPH</small></p><p class="detail-tax"><span id="detailPriceWithoutVAT"></span> bez DPH</p><dl class="detail-facts"><dt>Dostupnost</dt><dd><span class="availability" id="detailAvailability"></span></dd><dt>Kód produktu</dt><dd id="detailSpecs"></dd></dl><p class="detail-note" id="extraNote" hidden></p><a class="btn btn-primary" id="detailRetailerLink" href="#prodejci">Najít prodejce <svg class="icon"><use href="#i-arrow"/></svg></a><p class="detail-help">Zaujala vás tato varianta? Vyberte si některého z našich prodejců, nebo nám napište na <a href="mailto:armami@email.cz"><u>armami@email.cz</u></a>.</p></div></div><details class="description-section" id="expanded-section"><summary>Bližší popis a parametry <svg class="icon"><use href="#i-chevron"/></svg></summary><div class="description-content" id="detailDescription"></div></details></dialog>
-  <dialog class="gallery-dialog" id="imageModal" aria-labelledby="galleryTitle"><div class="dialog-bar"><p class="gallery-title" id="galleryTitle"></p><button class="icon-button" id="closeGallery" aria-label="Zavřít fotogalerii" autofocus><svg class="icon"><use href="#i-close"/></svg></button></div><div class="gallery-stage" id="galleryStage"><button class="icon-button gallery-arrow gallery-prev" id="prevImage" aria-label="Předchozí fotografie"><svg class="icon" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg></button><img id="modalImage" alt=""><button class="icon-button gallery-arrow gallery-next" id="nextImage" aria-label="Další fotografie"><svg class="icon"><use href="#i-arrow"/></svg></button></div><div class="gallery-footer"><span id="imageCounter" role="status" aria-live="polite"></span><span class="keyboard-hint">Šipky pro procházení · Esc pro zavření</span></div></dialog>
+  <dialog class="product-dialog" id="detail" aria-labelledby="detailTitle"><div class="dialog-bar"><span class="eyebrow">Zaffiro / Detail produktu</span><button type="button" class="icon-button" id="closeDetail" aria-label="Zavřít detail produktu" autofocus><svg class="icon"><use href="#i-close"/></svg></button></div><div class="detail-layout"><div><div class="detail-photo" id="detailPhoto"><button id="zoomImage" aria-label="Zvětšit fotografii produktu"><img id="detailImage" alt=""></button><span class="zoom-hint" id="zoomHint"><svg class="icon"><use href="#i-search"/></svg>Zvětšit fotografii</span><div class="photo-placeholder" id="detailPlaceholder" hidden><svg class="icon"><use href="#i-photo"/></svg><span>Fotografie této varianty se připravuje.</span></div></div><div class="detail-thumbnails" id="detailThumbnails" aria-label="Fotografie produktu"></div><button type="button" class="more-photos" id="morePhotos" aria-controls="detailThumbnails" aria-expanded="false" hidden>Další fotografie</button></div><div class="detail-copy"><span class="eyebrow" id="detailModel"></span><h2 id="detailTitle"></h2><p class="detail-collection" id="detailCollection"></p><p class="detail-price"><span id="detailPriceWithVAT"></span> <small>s DPH</small></p><p class="detail-tax"><span id="detailPriceWithoutVAT"></span> bez DPH</p><dl class="detail-facts"><dt>Dostupnost</dt><dd><span class="availability" id="detailAvailability"></span></dd><dt>Kód produktu</dt><dd id="detailSpecs"></dd></dl><p class="detail-note" id="extraNote" hidden></p><a class="btn btn-primary" id="detailRetailerLink" href="#kontakt">Poradit s výběrem <svg class="icon"><use href="#i-arrow"/></svg></a><p class="detail-help">Zaujala vás tato varianta? Rádi vám poradíme s výběrem. Napište nám na <a href="mailto:armami@email.cz"><u>armami@email.cz</u></a>.</p></div></div><details class="description-section" id="expanded-section"><summary>Bližší popis a parametry <svg class="icon"><use href="#i-chevron"/></svg></summary><div class="description-content" id="detailDescription"></div></details></dialog>
+  <dialog class="gallery-dialog" id="imageModal" aria-labelledby="galleryTitle"><div class="dialog-bar"><p class="gallery-title" id="galleryTitle"></p><button class="icon-button" id="closeGallery" aria-label="Zavřít fotogalerii" autofocus><svg class="icon"><use href="#i-close"/></svg></button></div><div class="gallery-stage" id="galleryStage"><button class="icon-button gallery-arrow gallery-prev" id="prevImage" aria-label="Předchozí fotografie"><svg class="icon" style="transform:rotate(180deg)"><use href="#i-arrow"/></svg></button><img id="modalImage" alt=""><button class="icon-button gallery-arrow gallery-next" id="nextImage" aria-label="Další fotografie"><svg class="icon"><use href="#i-arrow"/></svg></button></div><div class="gallery-footer"><span id="imageCounter" role="status" aria-live="polite"></span></div></dialog>
   <script>
 /* Catalogue data from the supplied GitHub repository. */
 const products = {
@@ -3288,6 +3282,33 @@ $('clearCollection').addEventListener('click',()=>{
   state.collection=''; state.page=1; renderCatalog(); updateURL(true); $('collectionSelect').focus({preventScroll:true});
 });
 
+
+// Keep one complete row of thumbnails until the visitor expands the gallery.
+let thumbnailsExpanded = false;
+function layoutThumbnails() {
+  const gallery = $('detailThumbnails');
+  const width = gallery.clientWidth;
+  if(!width) return;
+  const buttons = [...gallery.querySelectorAll('[data-photo]')];
+  const columns = Math.max(1,Math.floor((width+8)/(62+8)));
+  const columnValue = String(columns);
+  if(gallery.style.getPropertyValue('--thumbnail-columns') !== columnValue)
+    gallery.style.setProperty('--thumbnail-columns',columnValue);
+  buttons.forEach((button,i) => { button.hidden = !thumbnailsExpanded && i >= columns; });
+  const more = $('morePhotos');
+  const remaining = Math.max(0,buttons.length-columns);
+  more.hidden = remaining === 0;
+  more.setAttribute('aria-expanded',String(thumbnailsExpanded));
+  more.textContent = thumbnailsExpanded ? 'Méně fotografií' : 'Další fotografie (+'+remaining+')';
+  if(document.activeElement?.hidden && gallery.contains(document.activeElement))
+    more.focus({preventScroll:true});
+}
+$('morePhotos').addEventListener('click',() => {
+  thumbnailsExpanded = !thumbnailsExpanded;
+  layoutThumbnails();
+});
+new ResizeObserver(layoutThumbnails).observe($('detailThumbnails'));
+
 function setDetailImage(index) {
   currentIndex = index;
   const hasPhoto = currentProductImages.length > 0;
@@ -3316,7 +3337,9 @@ function openDetail(product) {
   currentProductImages = [...new Set([product.image,...(productGalleries[product.group+'|'+product.name] || [])])].filter(path => !missingImages.has(path));
   $('detailThumbnails').innerHTML = currentProductImages.length > 1 ? currentProductImages.map((src,i) => `<button data-photo="${i}" aria-label="Fotografie ${i+1} z ${currentProductImages.length}" aria-pressed="${i === 0}"><img src="${escapeHTML(src)}" alt="" width="62" height="62" loading="lazy"></button>`).join('') : '';
   setDetailImage(0);
+  thumbnailsExpanded = false;
   $('detail').showModal();
+  layoutThumbnails();
   $('detail').scrollTop = 0;
 }
 function openImageModal() {
@@ -3390,10 +3413,10 @@ $('detailThumbnails').addEventListener('click',event => {
 });
 $('detailRetailerLink').addEventListener('click',event => {
   event.preventDefault(); $('detail').close();
-  location.hash = 'prodejci';
-  $('retailerTitle').setAttribute('tabindex','-1');
-  $('retailerTitle').focus({preventScroll:true});
-  scrollToElement($('prodejci'));
+  location.hash = 'kontakt';
+  $('kontakt').setAttribute('tabindex','-1');
+  $('kontakt').focus({preventScroll:true});
+  scrollToElement($('kontakt'));
 });
 [$('detail'),$('imageModal')].forEach(dialog => dialog.addEventListener('click',event => {
   const rect = dialog.getBoundingClientRect();
@@ -3430,7 +3453,7 @@ const navigationObserver = new IntersectionObserver(entries => {
     });
   }
 },{rootMargin:'-80px 0px -35% 0px',threshold:0});
-['katalog','o-nas','prodejci','kontakt'].forEach(id => navigationObserver.observe($(id)));
+['katalog','o-nas','kontakt'].forEach(id => navigationObserver.observe($(id)));
 $('currentYear').textContent = new Date().getFullYear();
 renderModels();
 readURL();
